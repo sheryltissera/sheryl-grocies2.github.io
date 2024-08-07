@@ -3180,6 +3180,55 @@ text-align: center;
 margin-top: 20px;
 }
 
+
+#notification-banner {
+background-color: #f8d7da;
+color: #721c24;
+padding: 5px;
+text-align: center;
+border: 1px solid #f5c6cb;
+border-radius: 5px;
+margin-top: 60px;
+}
+
+
+#car1{
+  font-size: 35px;
+  text-align: center;
+  color: white;
+}
+
+#cart-table table {
+  border-collapse: collapse;
+  width: 80%; /* Adjust the width as needed */
+  margin: 0 auto; /* Center the table on the page */
+  border-radius: 10px;
+  overflow: hidden; /* Ensures the rounded corners are visible */
+  }
+  
+  #cart-table  th, td {
+  border: 4px solid #ffffff;
+  padding: 8px;
+  text-align: left;
+  height: 30px;
+  font-size: 20px;
+  }
+  
+  #cart-table th {
+  background-color: #7f7f7f;
+  }
+  
+  #cart-table tfoot tr {
+  border-radius: 0 0 10px 10px; /* Curves the bottom corners */
+  }
+  
+  #cart-table tfoot td {
+  background-color: #9c1414;
+  color: black;
+  font-weight: 700;
+  
+  }
+  
 #buy_now, #apply-fav, #save-order {
 width: 120px;
 height: 50px;
@@ -3194,18 +3243,10 @@ border-radius: 15px;
 cursor: pointer;
 margin: 0 10px;
 font-family:poppins;
+margin-bottom: 20px;
 }
 
 #buy_now:hover, #apply-fav:hover, #save-order:hover {
-background-color: #0c4b03;
+background-color: #35050b;
 color: white;
-}
-#notification-banner {
-background-color: #f8d7da;
-color: #721c24;
-padding: 5px;
-text-align: center;
-border: 1px solid #f5c6cb;
-border-radius: 5px;
-margin-top: 60px;
 }
