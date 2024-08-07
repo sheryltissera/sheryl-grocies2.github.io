@@ -1,0 +1,3187 @@
+
+body{
+    margin: 0;
+    font-family:poppins;
+    background-color: #121212;
+  }
+  
+  header {
+      background-color: #000000;
+      color: #fff;
+      padding: 20px;
+      position: fixed;/* To fix the header to the top of the page */
+      width: 97%;
+      top: 0;
+      left: 0;
+      z-index: 101; /* Add z-index to ensure the header stays on top of other elements */
+    }
+    
+    /* Nav Styling */
+    .navbar {
+      background-color: #000000;
+      font-family: 'Times New Roman', Times, serif;
+      padding-right: 15px;
+      padding-left: 15px;
+  }
+  
+  .navdiv {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+  }
+  
+  .logo-img {
+      width: 80px; /* increase the width as needed */
+      height: auto; /* this will maintain the aspect ratio of the image */
+  }
+  
+  .navdiv li {
+      list-style: none;
+      display: inline-block;
+  }
+  
+  .navdiv li a {
+      border-radius: 10px;
+      color: white;
+      font-size: 22px;
+      font-weight: bold;
+      padding: 13px;
+      text-decoration: none;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+  
+  .navdiv .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #000000;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      border-radius:11px;
+  }
+  
+  .navdiv .dropdown-content a {
+      color: rgb(255, 255, 255);
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+  }
+  
+  .navdiv .dropdown-content a:hover {
+      background-color: #303030;
+  }
+  
+  .navdiv .dropdown:hover .dropdown-content {
+      display: block;
+  }
+  
+  .navdiv ul li:hover {
+      background-color: #151414;
+      border-radius: 11px;
+  }
+
+  .button-nav {
+    margin: 0 2px;
+    background-color: #272727;
+    border: none;
+    color: white;
+    text-align: center;
+    display: inline-block;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 12px;
+    transition: all 0.3s ease 0s;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.nav-buttons {
+    margin-left: auto;
+    margin-right: 15px;
+    display: flex;
+    gap: 10px; /* Space between buttons */
+}
+
+.button-nav:hover {
+    background-color: #000000;
+}
+
+/* Media query for medium screens */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+
+  .navdiv {
+    flex-direction: row; 
+    align-items: flex-start; 
+    margin: 22px;
+    height: 85px;
+  }
+
+  .logo {
+    margin-left: -28px;
+    margin-top: -25px;
+  }
+
+  .logo-img {
+    width: 70px;
+    height: 74px;
+  }
+  .navdiv ul {
+    list-style-type: none;
+    margin-top: 70px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: -110px;
+    margin-right: 50px;
+  
+  }
+  
+  .navdiv li {
+    margin: 2px 0;
+    padding: -20px;
+    margin-left: 8px; 
+    display: block;
+  }
+  
+  .navdiv li a {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 23px;
+    text-decoration: none;
+    color: #ffffff;
+    padding: 2px 13px;
+    border-radius: 3px;
+  }
+  
+  .navdiv .dropdown-content {
+    display: none; 
+    position: absolute;
+    background-color: #000000;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 11px;
+  }
+
+  /* Buttons - Adjust Margins */
+  .nav-buttons {
+    font-size: 25px;
+    padding: 8px 10px;
+    margin: 5px; /* Add spacing between buttons */
+    margin-left: -190px;
+    margin-top: -5px;
+    text-decoration: none;
+  }
+}
+
+
+/* Media query for medium screens */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+
+  .navdiv {
+    flex-direction: row; 
+    align-items: flex-start; 
+    margin: 22px;
+    height: 85px;
+  }
+
+  .logo {
+    margin-left: -28px;
+    margin-top: -25px;
+  }
+
+  .logo-img {
+    width: 70px;
+    height: 74px;
+  }
+  .navdiv ul {
+    list-style-type: none;
+    margin-top: 70px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: -140px;
+    margin-right: 50px;
+  
+  }
+  
+  .navdiv li {
+    margin: 2px 0;
+    padding: -20px;
+    margin-left: 8px; 
+    display: block;
+  }
+  
+  .navdiv li a {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 18px;
+    text-decoration: none;
+    color: #ffffff;
+    padding: 2px 13px;
+    border-radius: 3px;
+  }
+  
+  .navdiv .dropdown-content {
+    display: none; 
+    position: absolute; /* Positioned relative to the dropdown button */
+    background-color: #000000;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 11px;
+  }
+
+  /* Buttons - Adjust Margins */
+  .nav-buttons {
+    font-size: 20px;
+    padding: 8px 10px;
+    margin: 5px; /* Add spacing between buttons */
+    margin-left: -150px;
+    margin-top: -5px;
+    text-decoration: none;
+  }
+}
+
+
+/* Media query for smaller screens */
+@media screen and (max-width: 480px) {
+
+  .navdiv {
+    flex-direction: row; 
+    align-items: flex-start; 
+    margin: 22px;
+  }
+
+  .logo {
+    margin-left: -28px;
+    margin-top: -25px; 
+  }
+
+  .logo-img {
+    width: 70px;
+    height: 75px;
+  }
+  .navdiv ul {
+    list-style-type: none;
+    margin-top: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-left: -120px;
+    margin-right: 50px;
+  
+  }
+  
+  .navdiv li {
+    margin: 2px 0;
+    padding: -20px; 
+    margin-left: 0;
+    display: block; 
+  }
+  
+  .navdiv li a {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 15px;
+    text-decoration: none;
+    color: #ffffff;
+    padding: 2px 11px;
+    border-radius: 3px;
+  }
+  
+  .navdiv .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #000000;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 11px;
+  }
+
+  /* Buttons*/
+  .nav-buttons {
+    font-size: 10px;
+    padding: 8px 10px;
+    margin: 5px; /* Add spacing between buttons */
+    margin-left: -165px;
+    margin-top: -15px;
+    text-decoration: none;
+  }
+}
+
+
+
+
+
+.hero {
+  position: relative;
+  top: 60px;
+  text-align: center;
+  padding: 100px 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 300px;
+  color: black;
+  z-index: 100;
+  background-image: url("../image/Black\ and\ White\ Modern\ Company\ Presentation\ \(1\).jpg");
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Mobile Styles */
+@media (max-width: 600px) {
+  .hero {
+    width: 100%;
+    padding: 50px 20px;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+/* Medium Screens */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .hero {
+    width: 100%;
+    padding: 75px 15px;
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+/* Large Screens */
+@media (min-width: 1025px) {
+  .hero {
+    padding: 100px 20px;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+
+
+.vege-hero {
+  position: relative;
+  top: 40px;
+  text-align: center;
+  padding: 100px 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 250px;
+  color: black;
+  z-index: 100;
+  width: 96.6%;
+  margin: 0px auto;
+  background-image: url("../image/vege\ hero.jpg");
+}
+
+/* Mobile Styles */
+@media (max-width: 500px) {
+  .vege-hero {
+    padding: 0; /* Remove padding for mobile screens */
+    height: 64vh; /* Set height to 100% of the viewport height */
+    background-size: cover; /* Ensure the image covers the entire section */
+    background-position: center; /* Center the image */
+    width: 100%;
+    margin-bottom: 0; /* Remove margin-bottom to fit the entire screen */
+  }
+}
+
+/* Medium Screens */
+@media (min-width: 600px) and (max-width: 830px) {
+  .vege-hero {
+    padding: 30px 100px;
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    margin-bottom: 40px;
+  }
+}
+
+/* Smaller than 1445px */
+@media (max-width: 1448px) {
+  .vege-hero {
+    padding: 30px 21px; /* Reduce padding for screens smaller than 1445px */
+    height: 500px; /* Further reduce height for screens smaller than 1445px */
+    background-size: cover; /* Ensure the entire image fits within the area */
+    background-position: center; /* Center the image */
+    width: 100%;
+    margin-bottom: 60px;
+  }
+}
+
+
+  
+
+    .dairy-hero {
+      position: relative;
+      top: 40px;
+      text-align: center;
+      padding: 100px 20px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 250px;
+      color: black;
+      z-index: 100;
+      background-image: url(../image/DAIRY\ 2.jpg);
+      width: 96.65%;
+      margin: 0px auto;
+    }
+
+/* Mobile Styles */
+@media (max-width: 600px) {
+  .dairy-hero {
+    width: 100%;
+    padding: 50px 20px;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+/* Medium Screens */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .dairy-hero {
+    width: 100%;
+    padding: 75px 20px;
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+/* Large Screens */
+@media (min-width: 1025px) {
+  .dairy-hero {
+    padding: 100px 20px;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+  }
+}
+  
+    .skincare-hero {
+      position: relative;
+      top: 100px;
+      text-align: center;
+      padding: 20px 50px;/*100px sets the top and bottom padding to 100 pixels, while the second value 20px sets the right and left padding to 20 pixels.*/
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 500px;
+      color: black;
+      z-index: 100;
+      /* Update the URL to point to the correct location of the image */
+      background-image: url("../image/SKINCARE.jpg");
+      width: 97.3%;
+      margin: 0px auto;
+      margin-bottom: 200px;
+    }
+    
+
+/* Mobile Styles */
+@media (max-width: 600px) {
+  .skincare-hero {
+    width: 100%;
+    padding: 50px 20px;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+/* Medium Screens */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .skincare-hero {
+    width: 100%;
+    padding: 75px 20px;
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+/* Large Screens */
+@media (min-width: 1025px) {
+  .skincare-hero {
+    padding: 100px 20px;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+  }
+}
+    
+    
+
+    .about-hero {
+      position: relative;
+      margin-top: 60px;
+      text-align: center;
+      padding: 20px 50px;
+      background-image: url("../image/ABOUT\ US1.jpg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 500px;
+      color: black;
+      z-index: 100;
+      overflow: hidden;
+      width: 100%;
+    }
+
+
+/* Large Screen */
+@media screen and (min-width:769 ) and (max-width: 1024px) {
+  .about-hero {
+    padding: 30px 15px; 
+    height: 300px;
+    background-size: contain;
+    background-position: center;
+    width: 100%;
+  }
+}
+/*Medium screen*/
+@media screen and (max-width:768px) {
+  .about-hero {
+    padding: 30px 20px; /* Reduce padding for screens smaller than 1445px */
+    height: 300px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+  }
+}
+
+  
+    .hero-content {
+      text-align: center; /* Align content to the right */
+      max-width: -800px;
+      margin: 0 auto; /* Center the content horizontally */
+      margin-right: 1%; /* Adjust as needed to move content more to the right */
+    }
+  
+    .hero p {
+      font-size: 28px;
+      margin-bottom: 20px;
+      text-align: center;
+      color: rgb(255, 255, 255);
+      font-weight: 500;
+    }
+    .hero h2 {
+      font-size: 50px;
+      margin-bottom: 38px;
+      text-align: center;
+      color: white;
+      font-weight: 700;
+    }
+
+   .homebox ol {
+    display: flex;
+    flex-direction: column;
+      margin-bottom: 10px;
+      text-align: center;
+      color: white;
+  }
+  
+  .homebox li {
+      font-size: 15px;
+      font-weight: bold;
+      color: white;
+      text-align: left;
+      justify-content: center;
+  }
+  .pro{
+    max-width: 200px;
+    margin-left: 100px;
+  }
+/* Media query for screens with a maximum width of 1230px */
+@media (max-width: 600px) {
+  /* Adjustments for the home container */
+  #homecontainer {
+    height: 100%; /* Set height to 100% of the container's parent */
+    flex-direction: column; /* Change flex direction to column */
+  }
+  
+    .homebox h2 {
+      font-size: 24px; /* Decrease font size for smaller screens */
+    }
+  
+  /* Adjustments for the headings within homebox sections */
+  #hb1 h2, #hb2 h2, #hb3 h2 {
+    color: white;
+    width: 100%;
+    margin-top: -10px;
+    font-size: 27px;
+  }
+
+  /* Adjustments for the home boxes */
+  .homebox {
+    max-width: 85%; /* Set maximum width to 100% of the container's width */
+    padding: 50px 30px; /* Increase padding to 50px top/bottom and 30px left/right */
+  }
+
+  /* Adjustments for images within home boxes */
+  .homebox img {
+    max-width: 300px; /* Set maximum width of images to 100% of their container */
+    height: 50px; /* Maintain aspect ratio */
+    margin-right: 10px;
+    margin-left: 11px;
+  }
+
+  /* Adjustments for paragraphs within home container */
+  #homecontainer p {
+    font-size: 25px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+
+  /* Adjustments for list items within home boxes */
+  .homebox li {
+    font-size: 14px;
+    text-align: left;
+    font-size: 14px;
+    width: 100%; /* Make list items take the full width */
+    max-width: 300px; /* Set a max-width for better appearance */
+    list-style-position: inside; /* Ensure list numbers are inside the items */
+  }
+
+  /* Adjustments for hero content */
+  .hero-content {
+    text-align: center;
+    margin: 0;
+  }
+
+  /* Adjustments for hero heading */
+  .hero h2 {
+    margin-top: 100px;
+    font-size: 25px;
+    color: white;  
+  }
+
+  /* Adjustments for hero paragraph */
+  .hero p {
+    margin-top: -30px;
+    font-size: 15px;
+  }
+  .pro{
+    max-width: 200px;
+    margin-left: 40px;
+  }
+  .footer-container{
+    flex-direction: column;
+  }
+
+  .footer-section p{
+    font-size: 18px;
+  }
+
+  .footer-section ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .footer-section a {
+    font-size: 16px;
+  }
+
+  .footer img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
+  .button-container{
+    margin-top: 15px;
+  }
+  .button{
+    padding: 12px 24px;
+  }
+}
+
+
+
+
+
+    
+
+    /*button styling*/
+    .button-container {
+      text-align: center; /* Align button to the center */
+      margin-top: 29px; /* Add margin top to create space between h1 and button */
+  }
+  
+    .button {
+      text-align: center;
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: #ffffff;
+      color: #000000;
+      border-radius: 7px;
+      text-decoration: none;
+      transition: transform 250ms cubic-bezier(.2, .8, .4, 1);
+    }
+    
+    .button:hover {
+      transform: scale(1.10);
+    }
+    
+    .button:active {
+      transform: scale(0.9);
+    }
+  
+  
+    /*p and ol li styling*/
+  
+    #homepage h4 {
+      font-size: 27px;
+      text-align: left;
+      margin-top: 40px;
+      color: white;
+    }
+    
+
+  
+  #homecontainer p {
+    font-size: 17px;
+    color: #ffffff;
+    text-align: center;
+    overflow: hidden;
+    font-weight: 100;
+  }
+  
+
+  #h3 {
+  font-size: 50px;
+  text-align: center;
+  color: #ffffff;
+  }
+  
+  #homecontainer {
+    display: flex;
+    flex-wrap: nowrap;
+
+  }
+  
+  .homecontainer > div {
+    width: 30%;
+    margin: 10px;
+    height: 600px;
+    color: #4b78af;
+  }
+  
+  .homebox h2 {
+    text-align: center;
+    color: #ffffff;
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+  }
+  
+
+  
+  .homebox {
+    width: 500px;
+    height: 570px;
+    border: solid #ffffff 0.2em;
+    margin: 1em;
+    font-size: 1em;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background-color: #000000;
+    overflow: hidden;
+  }
+  
+  .homebox h2{
+     color: white;
+     font-size: 20px;
+     text-align: center;
+  }
+
+  .homebox img {
+    border-radius: 10px;
+    width: 300px;
+    height: 290px;
+    overflow: hidden;
+  }
+
+
+
+
+  
+
+  #aboutus h1{
+    font-size: 30px;
+    font-weight: bold;
+    color:white;
+  }
+  
+  #aboutus h2{
+    font-size: 30px;
+    font-weight: bold;
+    color:white;
+  }
+
+  #branchContainer {
+    padding: 0;
+    margin: 0;  
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap; /* Prevent the sections from wrapping to the next line */
+    justify-content: left;
+    align-items: flex-start;
+    margin-left: 0%;
+}
+
+.branch {
+    width: 400px;
+    height: 780px;
+    border: solid #ffffff .2em;
+    font-size: 16px;
+    border-radius: 10px;
+    background-color: #000000;
+    margin-right: 30px; /* Adds a margin to the right of the .branch element */
+    margin-left: 50px;
+    overflow: hidden;
+    transition: transform 0.1s ease-in-out;
+}
+
+.branch:hover {
+    transform: scale(1.1);
+}
+
+.branch iframe {
+    width: 350px; /* Sets the width of the iframe to 100% of its container */
+    height: 150px; /* Sets the height of the iframe to 200 pixels */
+    border: none; /* Removes the border around the iframe */
+    display: block; /* Ensures the iframe behaves as a block-level element */
+    margin-left: 25px;
+    margin-right: 20px;
+    filter: invert(100%);
+    overflow: hidden;
+}
+
+.branch h2 {
+    font-size: 25px; /* Sets the font size of the h1 element within the .branch class */
+    text-align: center;
+    color: #ffffff; /* Sets the color of the h1 element within the .branch class */
+    text-decoration: none; /* Removes the underline from the h1 element within the .branch class */
+    margin: 0; /* Removes the top margin from the h1 element within the .branch class */
+    padding: 0; /* Removes the top padding from the h1 element within the .branch class */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.branch p {
+    font-size: 20px; /* Sets the font size of the h1 element within the .branch class */
+    text-align: left;
+    color: #ffffff; /* Sets the color of the h1 element within the .branch class */
+    text-decoration: none; /* Removes the underline from the h1 element within the .branch class */
+    padding-left: 5px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    overflow: hidden;
+    font-weight: 500;
+}
+
+.branch h5 {
+    font-size: 20px; /* Sets the font size of the h1 element within the .branch class */
+    text-align: left;
+    color: #fffefe; /* Sets the color of the h1 element within the .branch class */
+    text-decoration: none; /* Removes the underline from the h1 element within the .branch class */
+    margin: 0; /* Removes the top margin from the h5 element */
+    padding-left: 5px;
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  #aboutus h1, #aboutus h2 {
+      font-size: 30px; /* Slightly smaller font size for headers */
+      text-align: center;
+  }
+
+  #branchContainer {
+      flex-direction: row; /* Keep branches in a row */
+      flex-wrap: wrap; /* Allow wrapping to the next line */
+      justify-content: center; /* Center the branches */
+      align-items: flex-start;
+      margin-left: 0%;
+  }
+
+  .branch {
+      width: 70%; /* Adjust width for medium screens */
+      margin: 25px 2.5%; /* Adjust margins for better spacing */
+      height: 800px; /* Adjust height if necessary */
+      margin-left: 46px;
+  }
+
+  .branch iframe {
+      width: 80%; /* Adjust iframe width */
+      margin: 0 auto; /* Center the iframe horizontally */
+      height: 150px; /* Adjust height if necessary */
+  }
+
+  .branch h2 {
+      font-size: 22px; /* Adjust font size for headers */
+  }
+
+  .branch p, .branch h5 {
+    margin-left: 10px;
+      font-size: 25px; /* Adjust font size for paragraphs and h5 */
+  }
+
+  .branch img {
+      max-width: 98%; /* Set maximum width of images to 90% of their container */
+      height: auto; /* Maintain aspect ratio */
+      margin-top: -10px; /* Move the image down a little */
+      align-self: center; /* Center the image horizontally */
+  }
+
+  #aboutus table {
+    width: 100%; /* Make the table take the full width of the container */
+    font-size: 16px; /* Adjust font size for readability */
+}
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  #aboutus h1, #aboutus h2 {
+      font-size: 30px; /* Slightly smaller font size for headers */
+  }
+
+  #branchContainer {
+      flex-direction: row; /* Keep branches in a row */
+      flex-wrap: wrap; /* Allow wrapping to the next line */
+      justify-content: center; /* Center the branches */
+      align-items: flex-start;
+      margin-left: 0%;
+  }
+
+  .branch {
+      width: 80%; /* Adjust width for medium screens */
+      margin: 20px 2.5%; /* Adjust margins for better spacing */
+      height: 790px; /* Adjust height if necessary */
+      margin-left: 46px;
+  }
+
+  .branch iframe {
+      width: 80%; /* Adjust iframe width */
+      margin: 0 auto; /* Center the iframe horizontally */
+      height: 180px; /* Adjust height if necessary */
+  }
+
+  .branch h2 {
+      font-size: 22px; /* Adjust font size for headers */
+  }
+
+  .branch p, .branch h5 {
+      font-size: 20px; /* Adjust font size for paragraphs and h5 */
+  }
+
+  .branch img {
+      max-width: 90%; /* Set maximum width of images to 90% of their container */
+      height: auto; /* Maintain aspect ratio */
+      margin-top: -10px; /* Move the image down a little */
+      align-self: center; /* Center the image horizontally */
+  }
+
+  #aboutus table {
+    width: 100%; /* Make the table take the full width of the container */
+    font-size: 16px; /* Adjust font size for readability */
+}
+}
+
+
+@media (max-width: 480px) {
+  #branchContainer {
+      flex-direction: column; /* Stack branches vertically */
+      align-items: center; /* Center the branches horizontally */
+  }
+  .branch {
+      width: 80%; /* Adjust width for very small screens */
+      margin: 20px 0;
+      height: 690px;
+      margin-left: 50px;
+  }
+  .branch iframe {
+      width: 80%;
+  }
+  .branch h2 {
+      font-size: 20px;
+  }
+  .branch p, .branch h5 {
+      font-size: 18px; 
+  }
+  .branch img {
+      max-width: 90%; 
+      height: auto; 
+      margin-top: -10px;
+      align-self: center;
+  }
+
+  .aboutus-table {
+    width: 100%;
+    margin: 20px auto;
+    font-size: 18px; 
+}
+}
+  
+  .aboutus-table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    font-size: 20px;
+  }
+  
+  .aboutus-table th, td {
+    border: 1px solid #ffffff;
+    padding: 8px;
+    text-align: center;
+    color: #ffffff;
+    background-color: #000000;
+  }
+  
+  .aboutus-table th {
+    background-color: #232323;
+  }
+  
+  .aboutus-table tfoot {
+    background-color: #000000;
+    font-weight: bold;
+    color: #000000;
+  }
+  
+  
+  
+  /*login page styling*/
+  #login-Container {
+    background-color: #ffffff;
+    padding: 0;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    justify-content: center;
+    place-items: center; /* Center both horizontally and vertically */
+    margin-left: 0%;
+  }
+  
+  
+  .login{
+    width: 650px;
+    height: 500px;
+    border:solid #272343.2em;
+    font-size: 16px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    margin-right: 30px; /* Adds a margin to the right of the .branch element */
+    margin-left: 50px;
+  }
+  
+     #boxContainer {
+      background-color:#ffffff;
+      padding: 0;
+      margin: 0;  
+      display:flex;
+     flex-direction: row;
+     flex-wrap:wrap; /* Prevent the sections from wrapping to the next line */
+     justify-content: center;
+    }
+    .box {
+      width: 40%;
+      height: 450px;
+      border:solid #272343.1em;
+      margin: 10px;
+      font-size: 1em;
+      border-radius: 10px;
+    }
+    .imgcontainer{
+      width: 180px; /* Make images responsive */
+      height:auto;
+   }
+   .box button {
+    display: block; /* Ensure the button behaves as a block element */
+    margin: -50px auto; /* Center the button horizontally */
+    border: none;
+    outline: 0;
+    padding: 10px;
+    color: white;
+    background-color: #272343;
+    text-align: center;
+    cursor: pointer;
+    width: 50%;
+    font-size: 10px;
+    border-radius: 10px;
+   }
+
+
+  .login h1 {
+    font-size: 30px; /* Sets the font size of the h1 element within the .branch class */
+    text-align: center;
+    color: #272343; /* Sets the color of the h1 element within the .branch class */
+    text-decoration: none; /* Removes the underline from the h1 element within the .branch class */
+    margin: 0; /* Removes the top margin from the h1 element within the .branch class */
+    padding: 0; /* Removes the top padding from the h1 element within the .branch class */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+  
+  /*space between the container*/
+  #lp form {
+    margin-top: 20px;
+    margin-left: 10px;
+  }
+  
+  /*style for the input box*/
+  #lp input[type="text"] {
+    width: 50%;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-top:5px ;
+  }
+  
+  /* Style for the username label */
+  #lp label {
+    font-weight: bold;
+    font-size: 20px;
+  }
+  
+  /*styling for the password container*/
+  #lp input[type="password"] {
+    width: 50%;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-top:5px ;
+  }
+  
+  /*styling for the submit button*/
+  #lp input[type="submit"] {
+    width:20%;
+    padding: 10px;
+    border-radius: 15px;
+    background-color: #272343;
+  }
+  
+  #lp input[name="submit"] {
+   font-size:20px ;
+   color: white;
+   font-weight: bold;
+  }
+  
+  #lp input[type="submit"]:hover {
+    background-color: #3e3a59; /* Change background color on hover */
+  }
+  
+  
+  
+  /*order page, billing address styling*/
+  #billing-Container {
+    padding: 0;
+    margin-top: 20px;  
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap; /* Prevent the sections from wrapping to the next line */
+    justify-content: left;
+    align-items: flex-start;
+    margin-left: 0%;
+}
+
+.billing {
+    width: 650px;
+    height: 1400px;
+    border: solid #ffffff 0.2em;
+    font-size: 16px;
+    border-radius: 10px;
+    background-color: #000000;
+    margin-right: 30px; /* Adds a margin to the right of the .billing element */
+    margin-left: 50px;
+}
+
+.billing h1 {
+    font-size: 30px; /* Sets the font size of the h1 element within the .billing class */
+    text-align: center;
+    color: #ffffff; /* Sets the color of the h1 element within the .billing class */
+    text-decoration: none; /* Removes the underline from the h1 element within the .billing class */
+    margin: 0; /* Removes the top margin from the h1 element within the .billing class */
+    padding: 0; /* Removes the top padding from the h1 element within the .billing class */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/*space between the container*/
+#ba form {
+    margin-top: 10px;
+    margin-left: 20px;
+    color: white;
+}
+
+/*style for the input box*/
+#ba input[type="text"], #ba input[type="password"], #ba input[type="date"] {
+    width: 50%;
+    padding: 10px;
+    border: 3px solid rgb(255, 255, 255);
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+/*style for the labels*/
+#ba label {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+/*styling for the submit button*/
+#ba input[type="submit"] {
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: #212121;
+    font-size: 25px;
+    color: white;
+    font-weight: bold;
+}
+
+#ba input[type="submit"]:hover {
+    background-color: #474747; /* Change background color on hover */
+}
+@media (max-width: 992px) {
+  #billing-Container {
+      flex-direction: column;
+  }
+  .billing{
+    width: 90%;
+    margin-left: 45px;
+    margin-bottom: 20px;
+  }
+  #cart-container {
+    margin-top: 10px;
+}
+
+.cart {
+  width: 116%;
+  margin: 5px 0;
+  align-self: center;
+  margin-left:30px;
+  margin-right: -80px;
+}
+
+#c form {
+    margin-left: 5px;
+}
+
+}
+
+
+@media (max-width: 576px) {
+  #billing-Container {
+      margin-top: 10px;
+  }
+
+  .billing {
+      width: 90%;
+      margin: 60px 0;
+      align-self: center;
+      margin-left: 35px;
+      overflow: hidden;
+  }
+
+  #ba input[type="submit"] {
+      width: 70%;
+      padding: 15px;
+  }
+
+  #ba input[type="text"], #ba input[type="password"], #ba input[type="date"], #ba textarea {
+      width: 90%;
+  }
+
+  #ba form {
+      margin-left: 5px;
+  }
+  .nav-buttons {
+    font-size: 10px;
+    padding: 8px 10px;
+    margin: 5px; /* Add spacing between buttons */
+    margin-left: -220px;
+    margin-top: -15px;
+    text-decoration: none;
+  }
+}
+
+  
+  
+  /*CART CONTAINER STYLING*/
+  #cart-container {
+    background-color: #ffffff;
+    padding: 0;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap; /* Prevent the sections from wrapping to the next line */
+    justify-content: flex-end; /* Align to the right */
+    align-items: flex-start;
+    margin-left: auto; /* Move the cart-container to the right */
+}
+
+.cart {
+    width: 650px;
+    height: 1300px;
+    border: solid #ffffff 0.1em;
+    font-size: 16px;
+    border-radius: 10px;
+    background-color: #000000;
+    margin-right: 30px; /* Adds a margin to the right of the .cart element */
+    margin-left: 50px;
+}
+
+.cart {
+    font-size: 30px; /* Sets the font size of the h1 element within the .cart class */
+    text-align: center;
+    color: #ffffff; /* Sets the color of the h1 element within the .cart class */
+    text-decoration: none; /* Removes the underline from the h1 element within the .cart class */
+    margin: 0; /* Removes the top margin from the h1 element within the .cart class */
+    padding: 0; /* Removes the top padding from the h1 element within the .cart class */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/*space between the container*/
+#c form {
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+#cart-container .cart a {
+    color: #ffffff; /* Set the color of the links */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Make the text bold */
+}
+
+#cart-container .cart p {
+    text-align: left; /* Align the paragraphs (containing links and prices) to the left */
+}
+
+#cart-container .cart a:hover {
+    color: #464647; /* Change color on hover */
+}
+
+@media (max-width: 576px) {
+  #cart-container {
+      margin-top: 10px;
+  }
+
+  .cart {
+    width: 116%;
+    margin: 5px 0;
+    align-self: center;
+    margin-left:30px;
+    margin-right: 80px;
+  }
+
+  #c form {
+      margin-left: 5px;
+  }
+
+}
+
+  
+
+  /*LOYALTY PAGE STYLING*/
+
+  #loyalty-Container {
+    padding: 0;
+    margin-top: 20px;  
+    display:flex;
+   flex-direction: row;
+   flex-wrap: nowrap; /* Prevent the sections from wrapping to the next line */
+   justify-content:flex-start;
+   align-items: flex-start;
+   overflow: hidden;
+   margin-left: 0%;
+  }
+  
+  .loyalty{
+    width: 650px;
+    height: 1000px;
+    border:solid #272343.2em;
+    font-size: 16px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    margin-right: 30px; /* Adds a margin to the right of the .branch element */
+    margin-left: 20px;
+  }
+
+  .loyalty h1 {
+    font-size: 30px; /* Sets the font size of the h1 element */
+    text-align: center;
+    color: #272343; /* Sets the color of the h1 element */
+    text-decoration: none; /* Removes the underline from the h1 element */
+    margin: 0; /* Removes the top margin from the h1 element */
+    padding: 0; /* Removes the top padding from the h1 element */
+  }
+  
+  /*space between the container*/
+  #lr form {
+    margin-top: 10px;
+    margin-left: 20px;
+  }
+  
+  /*style for the input box*/
+  #lr input[type="text"] {
+    width: 50%;
+    padding: 10px;
+    border: 3px solid black;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-top:5px ;
+    margin-bottom: 10px;
+  }
+  
+  /*style for the Firstname label*/
+  #lr label[for="fname"] {
+    font-size: 20px;
+    margin-top: 5px; /* Add margin to the top of the address label */
+  }
+
+    /*style for the Lastname label*/
+   #lr label[for="lname"] {
+        font-size: 20px;
+        margin-top: 5px; /* Add margin to the top of the address label */
+      }
+
+  /*style for the email box*/
+  #lr input[type="email"] {
+    width: 50%;
+    padding: 10px;
+    border: 3px solid black;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-top:5px ;
+    margin-bottom: 10px;
+  }
+
+        /*style for the Firstname label*/
+  #lr label[for="email"] {
+    font-size: 20px;
+    margin-top: 5px; /* Add margin to the top of the address label */
+  }
+
+   /*style for the password*/
+   #lr input[type="password"] {
+    width: 50%;
+    padding: 10px;
+    border: 3px solid black;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-top:5px ;
+    margin-bottom: 10px;
+  }
+
+        /*style for the password label*/
+  #lr label[for="password"] {
+    font-size: 20px;
+    margin-top: 5px; /* Add margin to the top of the address label */
+  }
+
+ /* General styles for the loyalty scheme section */
+#lr {
+  font-size: 20px;
+  margin-bottom: 10px; /* Add some margin below the heading */
+}
+
+/* Container for each radio button and label */
+.radio-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px; /* Add some margin between each radio button and label */
+}
+
+/* Styles for the radio inputs */
+input[type="radio"] {
+  margin-right: 10px; /* Add some space between the radio input and the label */
+}
+
+/* Styles for the labels */
+.radio-container label {
+  font-size: 20px;
+}
+
+  #lr p {
+    font-size: 20px;
+    margin-top: 5px; /* Add margin to the top of the address label */ 
+  }
+
+  
+
+         /*style for the repeatpassword label*/
+         #lr label[for="repeatpassword"] {
+            font-size: 20px;
+            margin-top: 5px; /* Add margin to the top of the address label */
+          }
+
+     /*style for the checkbox*/
+  input[type="checkbox"] {
+    margin-right: 5px; /* Add some space between the radio input and the label */
+  }
+
+ /*style for the repeatpassword label*/
+ #lr label[for="rememberme"] {
+    font-size: 20px;
+    margin-top: 5px; /* Add margin to the top of the address label */
+  }
+
+/*styling for the submit button*/
+#lr input[type="submit"] {
+    display: block;
+    margin: 0 auto;
+    width:30%;
+    padding: 10px;
+    border-radius: 15px;
+    background-color: #272343;
+    margin-left: 20px;
+  }
+
+  #lr input[name="submit"] {
+    font-size:25px ;
+    color: white;
+    font-weight: bold;
+   }
+   
+   #lr input[type="submit"]:hover {
+     background-color: #3e3a59; /* Change background color on hover */
+   }
+  
+
+
+   .gold img {
+    border-radius: 10px;
+    width: 300px;
+    height: 250px;
+    overflow: hidden;
+  }
+
+  .silver img {
+    border-radius: 10px;
+    width: 300px;
+    height: 250px;
+    overflow: hidden;
+  }
+
+  .platinum img{
+    border-radius: 10px;
+    width: 300px;
+    height: 250px;
+    overflow: hidden;
+  }
+
+.gold {
+  width: 350px;
+  height: 435px;
+  border:solid #272343.1em;
+  margin-left: 2px;
+  font-size: 1em;
+  border-radius: 10px;
+  margin-top: 4px;
+  margin-right: 2px;
+  background-color: white;
+}
+
+.silver {
+  width: 350px;
+  height: 435px;
+  margin: 1em;
+  font-size: 1em;
+  border-radius: 10px;
+  margin-top: 4px; 
+  background-color: white;
+}
+
+.platinum {
+  width: 350px;
+  height: 435px;
+  border:solid #272343.1em;
+  margin: 1em;
+  font-size: 1em;
+  border-radius: 10px;
+  margin-top: 25px;
+  background-color: white;
+  margin-left: 50%;
+}
+
+.gold h1 {
+  font-size: 20px; /* Sets the font size of the h1 element */
+  text-align: center;
+  color: #272343; /* Sets the color of the h1 element */
+  text-decoration: none; /* Removes the underline from the h1 element */
+  margin: 0; /* Removes the top margin from the h1 element */
+  padding: 0; /* Removes the top padding from the h1 element */
+}
+
+.silver h1 {
+  font-size: 20px; /* Sets the font size of the h1 element */
+  text-align: center;
+  color: #272343; /* Sets the color of the h1 element */
+  text-decoration: none; /* Removes the underline from the h1 element */
+  margin: 0; /* Removes the top margin from the h1 element */
+  padding: 0; /* Removes the top padding from the h1 element */
+}
+
+.platinum h1 {
+  font-size: 20px; /* Sets the font size of the h1 element */
+  text-align: center;
+  color: #272343; /* Sets the color of the h1 element */
+  text-decoration: none; /* Removes the underline from the h1 element */
+  margin: 0; /* Removes the top margin from the h1 element */
+  padding: 0; /* Removes the top padding from the h1 element */
+}
+
+.gold li{
+  font-size: 17px;
+}
+
+.platinum li{
+  font-size: 17px;
+}
+
+.silver li{
+  font-size: 17px;
+}
+
+@media only screen and (max-width: 768px) {
+  #loyalty-Container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .loyalty {
+    width: 90%;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 50px;
+    overflow:hidden;
+  }
+
+  .loyalty h1 {
+    font-size: 24px;
+  }
+
+  #lr form {
+    margin-top: 10px;
+    margin-left: 0;
+    overflow: hidden;
+  }
+
+  #lr input[type="text"], #lr input[type="email"], #lr input[type="password"] {
+    width:80%;
+    margin-left: 5px;
+  }
+
+  #lr label{
+    font-size: 16px;
+    margin-left: 5px;
+  }
+
+  #lr input[type="submit"] {
+    width:50%;
+  }
+
+  .silver{
+    margin-right: 50px;
+  }
+  
+  .silver,.gold,.platinum{
+    width: 80%;
+    margin-top: 20px;
+    margin-left: 40px;
+    overflow: hidden;
+  }
+  .silver h1,.gold h1,.platinum h1 {
+    font-size: 20px;
+  }
+  .silver img,.gold img,.platinum img {
+    width: 60%;
+    height: auto;
+  }
+
+}
+
+
+
+
+#dairy-h2{
+  font-size: 30px;
+  text-align: center;
+  font-weight:bolder;
+  color: #fdfdff;
+}
+
+#dairy-p{
+  font-size: 35px;
+  text-align: center;
+  font-weight:bolder;
+  color: #ffffff;  
+}
+
+/* Style for the container holding dairy content */
+.dairy-Container {
+  display: flex;
+  height: 100vh; /* Set height to 100% of viewport height */
+  align-items: center;
+  justify-content: center;
+  gap: 2em; /* Set gap between children to 3em */
+  flex-grow: 1; /* Allow container to grow to fill available space */
+  padding: 0 40px; /* Set padding of 40px on left and right sides */
+}
+
+/* Style for the dairy boxes */
+.dairy-box {
+  width: 21em;
+  height: 30em; 
+  padding: 80px 30px; /* Set padding of 10px on top and bottom, 30px on left and right */
+  border-radius: 10px;
+  background-color: #ffffff;
+  border: rgb(0, 0, 0) solid 5px;
+}
+
+/*Style for the images in the dairy boxes*/
+.dairy-box img{
+  width: 350px;
+  height: 300px;
+  margin-top: -90px; /* Adjust the margin to move the image up */
+}
+
+/*Style for dairy box H1*/
+.dairy-box h2{
+  color: #000000;
+  font-size: 27px;
+  text-align: center;
+  font-weight: 600;
+  margin-top: 35px;
+}
+
+/*Style for the dairy box price*/
+.dairy-box h3{
+  color: #000000;
+  font-size: 27px;
+  text-align: center;
+  font-weight: 500;
+  margin-top: -10px;
+  margin-bottom: 50px;
+}
+/* Style for dairy box BUTTON */
+.dairy-box button {
+  display: inline-block;
+  padding: 20px 40px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #000000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+.dairy-box button:hover{
+  background-color: #424242;
+  text-decoration: none;
+}
+
+#cart-btn:hover{
+  background-color: grey;
+  color: black;
+}
+
+#cart-btn{
+  background-color: rgba(255, 0, 0, 0);
+  color: black;
+  padding: 20px 40px;
+  align-items: center;
+  border: 2px solid black;
+}
+
+
+/* Media query for screens with a maximum width of 1200px */
+@media (max-width: 1230px) {
+  /* Adjustments for the dairy container */
+  .dairy-Container {
+    height: 100%; /* Set height to 100% of the container's parent */
+    flex-direction: column; /* Change flex direction to column */
+  }
+  .dairy-box h1{
+    color: #ffffff;
+    font-size: 27px;
+  }
+  /* Adjustments for the dairy boxes */
+  .dairy-box {
+    max-width: 80%; /* Set maximum width to 80% of the container's width */
+    padding: 50px 30px; /* Increase padding to 30px */
+  }
+  .dairy-box img {
+    max-width: 100%; /* Set maximum width of images to 100% of their container */
+    height: auto; /* Maintain aspect ratio */
+    margin-top: -70px; /* Move the image down a little */
+  }
+  .dairy-box p{
+    font-size: 25px;
+    margin-top: -15px;
+    margin-bottom:20px;
+  }
+  .dairy-box button{
+    width: 70%; /* Make the button full width */
+    font-size: 12px;
+    height: 50px;
+  }
+
+  #cart-btn{
+    background-color: rgba(255, 0, 0, 0);
+    color: black;
+    border: 2px solid black;
+    width: 70%; 
+    height: 50px;
+    font-size: 12px;
+    margin-top: 15px;
+  }
+
+}
+
+
+#vh2{
+  color: white;
+  font-size: 30px;
+  text-align: center;
+}
+
+#vh1{
+  color: white;
+  font-size: 30px;
+  text-align: center;
+}
+
+.vege-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three columns with equal width */
+  gap: 20px; /* Gap between grid items */
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.vbox {
+  height: 600px;
+  background-color: #f0f0f0;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+}
+
+.vbox img{
+  width: 350px;
+  height: 350px;
+}
+
+.vbox h2{
+  font-size: 30px;
+}
+
+.vbox h3{
+  font-size: 20px;
+}
+
+/* vegetable buttons*/
+.vbox button {
+  display: inline-block;
+  padding: 20px 50px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #000000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#cart-btn{
+  background-color: rgba(255, 0, 0, 0);
+  color: black;
+  border: 2px solid black;
+  align-self: center;
+}
+
+#cart-btn:hover{
+  background-color: grey;
+  color: black;
+}
+
+.vbox button:hover{
+  background-color: #424242;
+}
+
+/* Small screens */
+@media (max-width: 599px) {
+
+  #vh2{
+    margin-top: -40px;
+    text-align: center;
+  }
+
+  #vh1{
+    margin-top: -80px;
+    text-align: center;
+  }
+  .vege-container {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+  }
+  .vbox {
+    max-width: 80%; 
+    padding: 50px 30px;
+    height: 450px;
+    margin-left: 45px;
+  }
+  .vbox img {
+    max-width: 100%; 
+    height: auto; 
+    margin-top: -50px; 
+  }
+  .vbox button{
+    width: 70%;
+    height: 50px;
+    font-size: 12px;
+  }
+
+  #cart-btn{
+    background-color: rgba(255, 0, 0, 0);
+    color: black;
+    border: 2px solid black;
+    width: 70%; 
+    height: 50px;
+    font-size: 12px;
+    margin-top: 15px;
+  }
+
+}
+
+/* Medium screens */
+@media (min-width: 600px) and (max-width: 830px) {
+  .vege-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  #cart-btn{
+    background-color: rgba(255, 0, 0, 0);
+    color: black;
+    border: 2px solid black;
+    width: 70%; 
+    height: 50px;
+    font-size: 12px;
+    margin-top: 15px;
+  }
+  
+  .vbox button{
+    width: 70%;
+    height: 50px;
+    font-size: 12px;
+  }
+}
+
+/* Large screens */
+@media (min-width: 1024px) {
+  .vege-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+}
+
+
+/* VEGETABLE SUPPLIERS */
+/* Global styles */
+.vs-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  justify-content: center; /* Align items in the center */
+}
+
+.vsbox {
+  flex: 0 0 24em; /* Set width and make it flexible */
+  height: 26em;
+  padding: 80px 30px; /* Set padding */
+  margin: 0 10px; /* Add margin between boxes */
+  border-radius: 15px;
+  background-color: #000000;
+  border: white solid 3px;
+  margin-bottom:20px;
+}
+
+.vsbox h2 {
+  text-align: center;
+  color: white;
+  font-size: 25px;
+  text-decoration: underline;
+}
+
+.vsbox p {
+  text-align: center;
+  color: white;
+  font-size: 19px;
+}
+
+.vsbox img {
+  width: 100%; /* Ensure the image fills the container */
+  height: 65%; /* Ensure the image fills the container */
+  border-radius: 10px; /* Apply border radius */
+  margin-top: -50px;
+}
+
+
+
+
+@media only screen and (max-width: 600px) {
+  #vh1{
+    margin-top: -80px;
+    text-align: center;
+  }
+  #vh2{
+    margin-top: -20px;
+    text-align: center;
+    font-size: 30px;
+  }
+  .vs-container {
+    justify-content: space-between; /* Adjust spacing for small screens */
+  }
+  .vsbox {
+    max-width: 80%; /* Set maximum width to 80% of the container's width */
+    padding: 50px 30px; /* Increase padding to 30px */
+    height: 500px;
+    margin-left: 28px;
+    display: flex; /* Add display: flex to make the container a flex container */
+    flex-direction: column; /* Change the flex direction to column */
+    align-items: center; /* Center the items horizontally */
+    margin-bottom: 17px;
+  }
+  .vsbox h2 {
+    font-size: 1.5em; 
+    text-align: center;
+  }
+  .vsbox p {
+    font-size: 1em; 
+  }
+  .vsbox img {
+    max-width: 80%; /* Set maximum width of images to 100% of their container */
+    height: 250px; /* Maintain aspect ratio */
+    margin-top: -70px; /* Move the image down a little */
+    align-self: center; /* Center the image horizontally */
+    margin-top: -30px;
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 768px) {
+  .vs-container {
+    justify-content: space-between; /* Adjust spacing for small screens */
+  }
+  .vsbox {
+    max-width: 80%; /* Set maximum width to 80% of the container's width */
+    padding: 50px 30px; /* Increase padding to 30px */
+    height: 400px;
+    margin-left: 185px;
+    display: flex; /* Add display: flex to make the container a flex container */
+    flex-direction: column; /* Change the flex direction to column */
+    align-items: center; /* Center the items horizontally */
+    margin-bottom: 17px;
+  }
+  .vsbox h2 {
+    font-size: 1.5em; /* Reduce font size for h2 elements */
+  }
+  .vsbox p {
+    font-size: 1em; /* Reduce font size for p elements */
+  }
+  .vsbox img {
+    max-width: 80%; /* Set maximum width of images to 100% of their container */
+    height: auto; /* Maintain aspect ratio */
+    margin-top: -70px; /* Move the image down a little */
+    align-self: center; /* Center the image horizontally */
+    margin-top: -30px;
+  }
+}
+
+@media only screen and (min-width: 769px)and (max-width: 1024px) {
+  #vh1{
+    margin-top: -80px;
+    text-align: center;
+  }
+  #vh2{
+    margin-top: 80px;
+    font-size: 40px;
+    margin-left: 300px;
+  }
+  .vs-container {
+    justify-content: space-between; /* Adjust spacing for small screens */
+  }
+
+  #vs1{
+    margin-top: 90px;
+  }
+  .vsbox {
+    max-width: 100%; /* Set maximum width to 100% of the container's width */
+    padding: 50px 30px; /* Increase padding to 30px */
+    height: 400px;
+    margin-left: 400px;
+    display: flex; /* Add display: flex to make the container a flex container */
+    flex-direction: column; /* Change the flex direction to column */
+    align-items: center; /* Center the items horizontally */
+    margin-bottom: 17px;
+  }
+  .vsbox h2 {
+    font-size: 1.5em; 
+    text-align: center;
+  }
+  .vsbox p {
+    font-size: 1em; 
+  }
+  .vsbox img {
+    max-width: 80%; /* Set maximum width of images to 100% of their container */
+    height: 250px; /* Maintain aspect ratio */
+    margin-top: -70px; /* Move the image down a little */
+    align-self: center; /* Center the image horizontally */
+    margin-top: -30px;
+  }
+}
+
+
+
+.skincare-section {
+  background-color: #121212;
+  width: 100%;
+  margin: 5px;
+}
+
+.skincare-section h3 {
+  color: #000000;
+  font-size: 20px;
+}
+
+.skincare-section p {
+  color: #000000;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.skincare-table {
+  border-spacing: 25px;
+}
+
+.skincare-table td {
+  padding: 20px;
+  background-color: #ffffff;
+  width: 300px;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.skincare-table img {
+  height: 200px;
+  width: 200px;
+  margin: 10px;
+}
+
+@media (max-width:654px){
+  .skincare-table td{
+    display: inline-block;
+    max-width: 220px;
+    margin: 5px;
+  }
+
+
+}
+
+.sccart {
+  width: 50%;
+  font-size: 18px;
+  background-color: #232323;
+  color: white;
+  padding: 15px;
+  margin-top: 17px;
+  border-radius: 15px;
+}
+
+/* Mobile Styles */
+@media(max-width: 600px) {
+  .skincare-section h3 {
+    font-size: 18px;
+  }
+
+  .skincare-section p {
+    font-size: 18px;
+  }
+
+  .skincare-table {
+    display: block;
+    margin-top: -140px;
+  }
+
+  .skincare-table td {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-left: 60px;
+    margin-bottom: 20px; /* Reduce the bottom margin to bring items closer */
+  }
+
+  .skincare-table img {
+    height: 150px;
+    width: 150px;
+    margin: 5px auto; /* Center the image */
+  }
+
+  .sccart {
+    width: 100%;
+    font-size: 16px;
+    padding: 10px;
+    margin-top: 10px; /* Ensure consistency with the desktop version */
+  }
+  .nav-buttons {
+    font-size: 10px;
+    padding: 8px 10px;
+    margin: 5px; /* Add spacing between buttons */
+    margin-left: -165px;
+    margin-top: -15px;
+    text-decoration: none;
+  }
+}
+
+
+
+
+
+
+
+/* Footer container */
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+  background-color: #000000;
+  color: #ffffff;
+}
+
+
+/* Footer */
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+/* Footer section */
+
+footer {
+  background-color: #000000;
+  color: white;
+  padding: 20px;
+  width: 97.2%;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-section {
+  text-align: left;
+}
+
+.footer-section p {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 5px;
+}
+
+.footer-section ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+#sm {
+  display: flex;
+  align-items: center;
+}
+
+#sm img {
+  width: 30px;
+  height: 30px;
+  margin-left: 10px;
+}
+
+
+/*Mobile Devices*/
+@media (max-width: 600px) {
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+
+  }
+  .footer-section {
+    min-width: 100%;
+    text-align: center;
+  }
+  #sm {
+    flex-direction: column;
+  }
+  #sm img {
+    margin: 10px 0;
+  }
+}
+
+
+/*Fruit page styling*/
+#f2{
+  color: white;
+  font-size: 40px;
+  text-align: center;
+  text-decoration: underline;
+}
+
+#vh1{
+  color: white;
+  font-size: 30px;
+  text-align: center;
+}
+
+.fruit-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three columns with equal width */
+  gap: 20px; /* Gap between grid items */
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.fbox {
+  height: 600px;
+  background-color: #f0f0f0;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+}
+
+.fbox img{
+  width: 350px;
+  height: 350px;
+}
+
+.fbox h2{
+  font-size: 30px;
+}
+
+.fbox h3{
+  font-size: 20px;
+}
+
+/* Style for dairy box BUTTON */
+.fbox button {
+  display: inline-block;
+  padding: 20px 50px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #000000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.fbox button:hover{
+  background-color: #424242;
+}
+
+/* Small screens */
+@media (max-width: 599px) {
+
+  #f2{
+    margin-top: 80px;
+    text-align: center;
+    font-size: 35px;
+  }
+
+  #vh1{
+    margin-top: -80px;
+    text-align: center;
+  }
+  .fruit-container {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+  }
+  .fbox {
+    max-width: 80%; /* Set maximum width to 80% of the container's width */
+    padding: 50px 30px; /* Increase padding to 30px */
+    height: 450px;
+    margin-left: 45px;
+  }
+  .fbox img {
+    max-width: 100%; /* Set maximum width of images to 100% of their container */
+    height: auto; /* Maintain aspect ratio */
+    margin-top: -50px; /* Move the image down a little */
+  }
+  .fbox button{
+    width: 70%;
+    height: 50px;
+    font-size: 12px;
+  }
+  #cart-btn{
+    background-color: rgba(255, 0, 0, 0);
+    color: black;
+    border: 2px solid black;
+    width: 70%; 
+    height: 50px;
+    font-size: 12px;
+    margin-top: 15px;
+  }
+
+}
+
+/* Medium screens */
+@media (min-width: 600px) and (max-width: 830px) {
+  .fruit-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+}
+
+/* Large screens */
+@media (min-width: 1024px) {
+  .fruit-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}
+
+
+/*Meat and Seafood page styling*/
+#m2{
+  color: white;
+  font-size: 40px;
+  text-align: center;
+  text-decoration: underline;
+}
+
+#vh1{
+  color: white;
+  font-size: 30px;
+  text-align: center;
+}
+
+.meat-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three columns with equal width */
+  gap: 20px; /* Gap between grid items */
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.mbox {
+  height: 600px;
+  background-color: #f0f0f0;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+}
+
+.mbox img{
+  width: 350px;
+  height: 350px;
+}
+
+.mbox h2{
+  font-size: 30px;
+}
+
+.mbox h3{
+  font-size: 20px;
+}
+
+.mbox button {
+  display: inline-block;
+  padding: 20px 50px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #000000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.fbox button:hover{
+  background-color: #424242;
+}
+
+/* Small screens */
+@media (max-width: 599px) {
+
+  #m2{
+    margin-top: 80px;
+    text-align: center;
+    font-size: 35px;
+  }
+
+  #vh1{
+    margin-top: -80px;
+    text-align: center;
+  }
+  .meat-container {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+  }
+  .mbox {
+    max-width: 80%; /* Set maximum width to 80% of the container's width */
+    padding: 50px 30px; /* Increase padding to 30px */
+    height: 450px;
+    margin-left: 45px;
+  }
+  .mbox img {
+    max-width: 100%; /* Set maximum width of images to 100% of their container */
+    height: auto; /* Maintain aspect ratio */
+    margin-top: -50px; /* Move the image down a little */
+  }
+  .mbox button{
+    width: 70%;
+    font-size: 12px;
+    height: 50px;
+  }
+
+  #cart-btn{
+    background-color: rgba(255, 0, 0, 0);
+    color: black;
+    border: 2px solid black;
+    width: 70%; 
+    height: 50px;
+    font-size: 12px;
+    margin-top: 15px;
+  }
+}
+
+/* Medium screens */
+@media (min-width: 600px) and (max-width: 830px) {
+  .meat-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+}
+
+/* Large screens */
+@media (min-width: 1024px) {
+  .meat-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}
+
+
+/*Ingredients page styling*/
+#i2{
+  color: white;
+  font-size: 40px;
+  text-align: center;
+  text-decoration: underline;
+}
+
+#vh1{
+  color: white;
+  font-size: 30px;
+  text-align: center;
+}
+
+.ing-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three columns with equal width */
+  gap: 20px; /* Gap between grid items */
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.ibox {
+  height: 600px;
+  background-color: #f0f0f0;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+}
+
+.ibox img{
+  width: 350px;
+  height: 350px;
+}
+
+.ibox h2{
+  font-size: 30px;
+}
+
+.ibox h3{
+  font-size: 20px;
+}
+
+/* Style for dairy box BUTTON */
+.ibox button {
+  display: inline-block;
+  padding: 20px 50px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #000000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.ibox button:hover{
+  background-color: #424242;
+}
+
+/* Small screens */
+@media (max-width: 599px) {
+
+  #i2{
+    margin-top: 80px;
+    text-align: center;
+    font-size: 35px;
+  }
+
+  #vh1{
+    margin-top: -80px;
+    text-align: center;
+  }
+  .ing-container {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+  }
+  .ibox {
+    max-width: 80%; /* Set maximum width to 80% of the container's width */
+    padding: 50px 30px; /* Increase padding to 30px */
+    height: 450px;
+    margin-left: 45px;
+  }
+  .ibox img {
+    max-width: 100%; /* Set maximum width of images to 100% of their container */
+    height: auto; /* Maintain aspect ratio */
+    margin-top: -50px; /* Move the image down a little */
+  }
+  .ibox button{
+    width: 70%; 
+    height: 50px;
+    font-size: 12px;
+  }
+  #cart-btn{
+    background-color: rgba(255, 0, 0, 0);
+    color: black;
+    border: 2px solid black;
+    width: 70%; 
+    height: 50px;
+    font-size: 12px;
+    margin-top: 15px;
+  }
+
+}
+
+
+
+@media(min-width:830px) and (max-width:860px){
+  .ing-container {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+  }
+  .ibox {
+    max-width: 80%; /* Set maximum width to 80% of the container's width */
+    padding: 50px 30px; /* Increase padding to 30px */
+    height: 450px;
+    margin-left: 45px;
+  }
+  .ibox img {
+    max-width: 40%; /* Set maximum width of images to 100% of their container */
+    height: 60%; /* Maintain aspect ratio */
+    margin-top: -50px; /* Move the image down a little */
+  }
+  .ibox button{
+    width: 30%; 
+    height: 50px;
+    font-size: 12px;
+  }
+  #cart-btn {
+    background-color: rgba(255, 0, 0, 0);
+    color: black;
+    border: 2px solid black;
+    width: 30%; 
+    height: 50px;
+    font-size: 15px;
+    text-align: center;
+    margin-top: 10px;
+  }
+}
+
+
+
+@media (min-width:830px) and (max-width:860px){
+  .ing-container {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+  }
+  .ibox {
+    max-width: 80%; /* Set maximum width to 80% of the container's width */
+    padding: 50px 30px; /* Increase padding to 30px */
+    height: 450px;
+    margin-left: 45px;
+  }
+  .ibox img {
+    max-width: 40%; /* Set maximum width of images to 100% of their container */
+    height: 60%; /* Maintain aspect ratio */
+    margin-top: -50px; /* Move the image down a little */
+  }
+  .ibox button{
+    width: 30%; 
+    height: 50px;
+    font-size: 12px;
+  }
+  #cart-btn {
+    background-color: rgba(255, 0, 0, 0);
+    color: black;
+    border: 2px solid black;
+    width: 30%; 
+    height: 50px;
+    font-size: 15px;
+    text-align: center;
+    margin-top: 10px;
+  }
+}
+
+
+/* Medium screens */
+@media (min-width: 861px) and (max-width: 1023px) {
+  .ing-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  #cart-btn {
+    background-color: rgba(255, 0, 0, 0);
+    color: black;
+    border: 2px solid black;
+    width: 45%; 
+    height: 60px;
+    font-size: 15px;
+    text-align: center;
+    margin-top: 10px;
+  }
+}
+
+/* Large screens */
+@media (min-width: 1024px) {
+  .ing-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+}
+
+
+/*login page styling*/
+#cart-Container {
+  padding: 0;
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  justify-content: center;
+  place-items: center; /* Center both horizontally and vertically */
+  margin-left: 0%;
+}
+
+
+.cpage{
+  width: 650px;
+  height: 500px;
+  border:solid #ffffff.2em;
+  font-size: 16px;
+  border-radius: 10px;
+  background-color: #000000;
+  margin-right: 30px; /* Adds a margin to the right of the .branch element */
+  margin-left: 50px;
+}
+
+.cpage h1 {
+  font-size: 30px; /* Sets the font size of the h1 element within the .branch class */
+  text-align: center;
+  color: #ffffff; /* Sets the color of the h1 element within the .branch class */
+  text-decoration: none; /* Removes the underline from the h1 element within the .branch class */
+  margin: 0; /* Removes the top margin from the h1 element within the .branch class */
+  padding: 0; /* Removes the top padding from the h1 element within the .branch class */
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/*space between the container*/
+#cp form {
+  margin-top: 20px;
+  margin-left: 10px;
+}
+
+/*style for the input box*/
+#cp input[type="text"] {
+  width: 50%;
+  padding: 10px;
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-top:5px ;
+}
+
+/* Style for the username label */
+#cp label {
+  font-weight: bold;
+  color: white;
+  font-size: 20px;
+}
+
+/*styling for the password container*/
+#cp input[type="password"] {
+  width: 50%;
+  padding: 10px;
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-top:5px ;
+}
+
+/*styling for the submit button*/
+#cp input[type="submit"] {
+  width:20%;
+  padding: 10px;
+  border-radius: 15px;
+  background-color: #ffffff;
+}
+
+#cp input[name="submit"] {
+ font-size:20px ;
+ color: rgb(0, 0, 0);
+ font-weight: bold;
+}
+
+#cp input[type="submit"]:hover {
+  background-color: #515151; /* Change background color on hover */
+}
+
+
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  border: 4px solid #ffffff;
+  padding: 8px;
+  text-align: left;
+  height: 30px;
+  font-size: 20px;
+}
+
+th {
+  background-color: #7f7f7f;
+}
+
+
+
+#bin button {
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+#bin button:hover {
+  opacity: 0.8;
+}
+
+#bin button:active {
+  transform: scale(0.9);
+}
+
+.remove-btn{
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 11px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: #000000;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.remove-btn:hover{
+  background-color: #464647;
+}
+
+
+.fav-button img {
+  display: block;
+  width: 50px; 
+  height: 50px;
+  border: none; 
+  cursor: pointer; 
+  margin-left:390px;
+  margin-top: -370px;
+}
+
+.fav-button {
+  display: inline-block; 
+  text-decoration: none; 
+}
+
+
+
+
+
+
+
+
+
+#ch2{
+  color: white;
+  font-size: 30px;
+  text-align: center;
+}
+
+#ch1{
+  color: white;
+  font-size: 30px;
+  text-align: center;
+}
+
+.cart-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three columns with equal width */
+  gap: 20px; /* Gap between grid items */
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.cbox {
+  height: 600px;
+  background-color: #f0f0f0;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+}
+
+.cbox h2{
+  font-size: 30px;
+}
+
+.cbox h3{
+  font-size: 20px;
+}
+
+
+.cbox button {
+  display: inline-block;
+  padding: 20px 50px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #000000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#cart-btn{
+  background-color: rgba(255, 0, 0, 0);
+  color: black;
+  border: 2px solid black;
+}
+
+#cart-btn:hover{
+  background-color: grey;
+  color: black;
+}
+
+.cbox button:hover{
+  background-color: #424242;
+}
+
+/* Small screens */
+@media (max-width: 599px) {
+
+  #ch2{
+    margin-top: -40px;
+    text-align: center;
+  }
+
+  #ch1{
+    margin-top: -80px;
+    text-align: center;
+  }
+  .cart-container {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+  }
+  .cbox {
+    max-width: 80%; 
+    padding: 50px 30px;
+    height: 450px;
+    margin-left: 45px;
+  }
+
+  .cbox button{
+    width: 70%;
+    height: 50px;
+    font-size: 12px;
+  }
+
+  #cart-btn{
+    background-color: rgba(255, 0, 0, 0);
+    color: black;
+    border: 2px solid black;
+    width: 70%; 
+    height: 50px;
+    font-size: 12px;
+    margin-top: 15px;
+  }
+
+}
+
+/* Medium screens */
+@media (min-width: 600px) and (max-width: 830px) {
+  .cart-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  #cart-btn{
+    background-color: rgba(255, 0, 0, 0);
+    color: black;
+    border: 2px solid black;
+    width: 70%; 
+    height: 50px;
+    font-size: 12px;
+    margin-top: 15px;
+  }
+  
+  .cbox button{
+    width: 70%;
+    height: 50px;
+    font-size: 12px;
+  }
+}
+
+/* Large screens */
+@media (min-width: 1024px) {
+  .cart-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+}
+
+.cbox label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #000000;
+  font-size: 20px;
+}
+
+.cbox select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #000000;
+  border-radius: 4px;
+  background-color: #fff;
+  font-size: 1em;
+}
+
+.cbox select:focus {
+  border-color: #000000;
+  box-shadow: 0 0 5px rgba(208, 39, 39, 0.25);
+  outline: none;
+}
+
+#dairy-product-details img,#vege-product-details img,#fruit-product-details img,#meat-seafood-product-details img,#ingredient-product-details img {
+  width: 200px;
+  height: 200px; 
+  transition: width 0.3s ease; 
+}
+
+#buy_now{
+  width: 80px;
+  height: 50px;
+  background-color: black;
+  color: white;
+  font-size: 13px;
+  font-weight: 30px;
+  border-radius: 15px;
+  text-decoration: none;
+}
+
+#apply-fav{
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 11px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: #000000;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#apply-fav:hover{
+  background-color: #464647;
+}
+
+#buy_now{
+  display: inline-block;
+  font-size: 11px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: #000000;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#buy_now:hover{
+  background-color: #464647;
+}
