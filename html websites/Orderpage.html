@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="my website">
+    <title>Order Page</title>
+    <link rel="stylesheet" href="style/Website.css">
+</head>
+<body>
+    <div id="order">
+        <header>
+            <nav class="navbar">
+                <div class="navdiv">
+                    <div class="logo">
+                        <a href="index.html">
+                            <img src="image/GROCIES LOGO.png" alt="logo" class="logo-img">
+                        </a>
+                    </div>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="Aboutuspage.html">About</a></li>
+                        <li class="dropdown">
+                            <a class="dropbtn">Products</a>
+                            <div class="dropdown-content">
+                                <a href="dairy.html">Dairy Products</a>
+                                <a href="vegetables.html">Vegetables</a>
+                                <a href="fruits.html">Fresh Fruits</a>
+                                <a href="Meat.html">Meat / Seafood</a>
+                                <a href="Ingredients.html">Ingredients</a>
+                            </div>
+                        </li>
+                        <li><a href="Orderpage.html">Order</a></li>
+                        <li><a href="Loyaltyregistration.html">Loyalty.R</a></li>
+                    </ul>
+                    <div class="nav-buttons">
+                        <a href="cart1.html" class="button-nav">Cart</a>
+                        <a href="fav.html" class="button-nav">Favorite</a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+    </div>
+    <br><br><br><br><br><br><br><br><br>
+    <div id="billing-Container">
+        <section id="ba" class="billing">
+            <br>
+            <h1><u>Billing Address</u></h1>
+            <br><br>
+            <form>
+                <label for="fname">First Name (max 30 characters a-z and A-Z):</label><br>
+                <input type="text" name="fname" maxlength="30" required="required"><br><br>
+                <label for="lname">Last Name (max 30 characters a-z and A-Z):</label><br>
+                <input type="text" name="lname" maxlength="30" required="required"><br><br>
+                <label for="address">Address:</label><br>
+                <textarea cols="70" rows="10" name="address"></textarea><br><br>
+                <label for="city">City (max 50 characters a-z and A-Z):</label><br>
+                <input type="text" name="city" required="required" maxlength="50"><br><br>
+                <label for="state">State:</label><br>
+                <textarea cols="70" rows="5" name="address"></textarea><br>
+            </form>
+            <br>
+            <h1><u>Payment Details</u></h1>
+            <br><br>
+            <form>
+                <label for="cname">Name On Card (max 26 characters a-z and A-Z):</label><br>
+                <input type="text" name="cname" maxlength="26" required="required"><br>
+                <label for="ccnumber">Credit Card Number (max 16 digits):</label><br>
+                <input type="password" name="ccnumber" maxlength="16" required="required"><br>
+                <label for="expiry">Expiry:</label><br>
+                <input type="date" name="expiry" required="required"><br>
+                <label for="cvv">Card Verification Value (max 4 digits):</label><br>
+                <input type="text" name="cvv" maxlength="4" required="required"><br><br><br>
+                <input type="submit" name="submit">
+            </form>
+        </section>
+    </div>
+    <br><br>
+    <h1 id="vh1">Cart Table</h1>
+    <table id="order-table">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total Price</th>
+                <th>Remove</th>
+            </tr>
+        </thead>
+        <tbody id="order-table-body">
+            <!-- Cart items will be dynamically added here -->
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="4">Total Price</td>
+                <td id="grand-total">Rs 0.00</td>
+            </tr>
+        </tfoot>
+    </table>
+    <br><br>
+    <footer>
+        <div class="footer-container">
+            <div class="footer">
+                <div class="footer-section">
+                    <p>GROCIES SUPERMARKET</p>
+                    <address>
+                        123 Main Street<br>
+                        Anytown, CA 12345<br>
+                        <a href="tel:+1234567890">+1 (234) 567-890</a>
+                    </address>
+                </div>
+                <div class="footer-section">
+                    <p>About Us</p>
+                    <ul>
+                        <li><a href="#">Our Story</a></li>
+                        <li><a href="#">Our Team</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <p>Resources</p>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section" id="sm">
+                    <p>Follow Us on: </p><br>
+                    <a href="https://www.instagram.com/_thani_0911_/?utm_source=ig_web_button_share_sheet"><img src="image/instagram.png" alt="Instagram Icon"></a>
+                    <a href="https://www.tiktok.com/@your_tiktok_username"><img src="image/tiktok.png" alt="TikTok Icon"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="order.js"></script>
+</body>
+</html>
