@@ -43,9 +43,44 @@
       </nav>
   </header>
 </div>
-    <br><br><br>
-    <h1 id="ch2">Add To Cart</h1>
+<br><br><br>
+<br><br><br>
+<br><br><br>
+<br><br><br>
+ 
+    <h1 id="vh1">Cart</h1>
+    <table id="cart-table">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Image</th>
+                <th>Quantity</th>
+                <th>Total Price</th>
+                <th>Remove</th>
+            </tr>
+        </thead>
+        <tbody id="cart-table-body">
+            <!-- Cart items will be dynamically added here -->
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="4">Total Price</td>
+                <td id="grand-total">Rs 0.00</td>
+            </tr>
+        </tfoot>
+    </table>
+    <div class="button-container">
+        <a href="../html websites/Orderpage.html">
+            <button id="buy_now">Pay Now</button>
+        </a>
+        <button id="apply-fav">Apply Fav</button>  
+        <button id="save-order">Save order</button>
+    </div>
+
+    
     <br>
+    <h1 id="ch2">Add To Cart</h1>
     <div class="cart-container">
         <div class="cbox">
             <h2>Dairy Products</h2>
@@ -122,34 +157,7 @@
         </div>
     </div>
     <br>
-    <h1 id="vh1">Cart Table</h1>
-    <table id="cart-table">
-        <thead>
-            <tr>
-                <th>Product</th>
-                <th>Price</th>
-                <th>Image</th>
-                <th>Quantity</th>
-                <th>Total Price</th>
-                <th>Remove</th>
-            </tr>
-        </thead>
-        <tbody id="cart-table-body">
-            <!-- Cart items will be dynamically added here -->
-        </tbody>
-        <tfoot>
-            <tr>
-                <td colspan="4">Total Price</td>
-                <td id="grand-total">Rs 0.00</td>
-            </tr>
-        </tfoot>
-    </table>
-    <br>
-    <a href="../html websites/Orderpage.html">
-    <button id="buy_now">Pay Now</button>
-    </a>
-    <button id="apply-fav">Apply Fav</button>
-    <button id="save-order">Save order</button>
+
     <br><br><br><br>
     <footer>
         <div class="footer-container">
@@ -188,5 +196,6 @@
         </div>
     </footer>
     <script  src="../scripts/cart.js"></script>
+    
 </body>
 </html>

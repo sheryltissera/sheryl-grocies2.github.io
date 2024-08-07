@@ -1,23 +1,25 @@
-let cart = [];
 
-// Function to append item to cart in localStorage
+// Initialize cart
+let cart1 = [];
+
+// Function to add product to cart and save to localStorage
 function appendToCart(productName, price, imageSrc, quantity) {
     let cartItems = JSON.parse(localStorage.getItem("cart")) || [];
     cartItems.push({ productName, price, imageSrc, quantity });
     localStorage.setItem("cart", JSON.stringify(cartItems));
 }
 
-// Function to update total price of a row
+// Function to update the total price of a row
 function updateTotalPrice(row, price) {
-    const quantity = parseInt(row.querySelector(".quantity-input").value);
+    const quantity = row.querySelector(".quantity-input").value;
     const totalPriceCell = row.querySelector(".total-price");
-    const priceNumber = parseFloat(price.replace("Rs ", ""));
+    const priceNumber = parseFloat(price.replace("Rs ", "").replace(" / KG", ""));
     const totalPrice = priceNumber * quantity;
     totalPriceCell.innerText = `Rs ${totalPrice.toFixed(2)}`;
     updateGrandTotal();
 }
 
-// Function to update grand total price
+// Function to update the grand total price
 function updateGrandTotal() {
     let grandTotal = 0;
     document.querySelectorAll(".total-price").forEach((cell) => {
@@ -41,7 +43,7 @@ function removeFromCart(row) {
 function addToCart(productName, price, imageSrc, quantity = 1) {
     const tableBody = document.getElementById("cart-table-body");
     if (!tableBody) {
-        console.error("Cart table not found!");
+        console.error("Cart table body not found!");
         return;
     }
 
@@ -50,21 +52,49 @@ function addToCart(productName, price, imageSrc, quantity = 1) {
         <td>${productName}</td>
         <td>${price}</td>
         <td><img src="${imageSrc}" alt="${productName}" style="width: 50px; height: auto;"></td>
-        <td><input type="number" value="${quantity}" min="1" class="quantity-input"></td>
+        <td>
+            <input type="number" value="${quantity}" min="1" class="quantity-input">
+            <button class="save-btn">Save</button>
+        </td>
         <td class="total-price">${price}</td>
         <td><button class="remove-btn">Remove</button></td>
     `;
     tableBody.appendChild(row);
 
+    // Add event listener to quantity input
     row.querySelector(".quantity-input").addEventListener("input", function () {
         updateTotalPrice(row, price);
     });
 
+    // Add event listener to save button
+    row.querySelector(".save-btn").addEventListener("click", function () {
+        saveQuantity(row, productName);
+    });
+
+    // Add event listener to remove button
     row.querySelector(".remove-btn").addEventListener("click", function () {
         removeFromCart(row);
     });
 
+    // Set initial quantity and price
     updateTotalPrice(row, price);
+}
+
+// Function to save the quantity to localStorage
+function saveQuantity(row, productName) {
+    const quantity = row.querySelector(".quantity-input").value;
+    let cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+
+    // Find the item in the cart and update its quantity
+    cartItems = cartItems.map(item => {
+        if (item.productName === productName) {
+            item.quantity = quantity;
+        }
+        return item;
+    });
+
+    localStorage.setItem("cart", JSON.stringify(cartItems));
+    
 }
 
 // Function to load cart items from localStorage
@@ -80,7 +110,6 @@ function loadFavoritesToCart() {
     const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
     favorites.forEach((product) => {
         addToCart(product.productName, product.price, product.imageSrc, product.quantity);
-        appendToCart(product.productName, product.price, product.imageSrc, product.quantity);
     });
 }
 
@@ -93,14 +122,37 @@ function saveOrderAsFavorite() {
 
 // Attach event listener to the "Apply Fav" button
 document.getElementById("apply-fav").addEventListener("click", function () {
-    loadFavoritesToCart();
+  // Clear current cart
+  const tableBody = document.getElementById("cart-table-body");
+  if (tableBody) {
+      tableBody.innerHTML = ''; // Clear existing cart items
+  }
+
+  // Load favorites
+  const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+  
+  // Clear existing cart items from localStorage
+  localStorage.setItem("cart", JSON.stringify([]));
+  
+  // Add favorites to the cart
+  favorites.forEach(item => {
+      appendToCart(item.productName, item.price, item.imageSrc, item.quantity);
+      addToCart(item.productName, item.price, item.imageSrc, item.quantity);
+  });
+  
+  // Check cart and display banner
+  checkCartAndDisplayBanner();
 });
 
-// Attach event listener to the "Save order" button
-document.getElementById("save-order").addEventListener("click", saveOrderAsFavorite);
 
-// Load cart items from localStorage when the page loads
-document.addEventListener("DOMContentLoaded", loadCartFromLocalStorage);
+
+// Attach event listener to the "Save order" button
+document.getElementById("save-order").addEventListener("click", function () {
+    saveOrderAsFavorite();
+    
+});
+
+
 
 
 // Dairy Product Information
