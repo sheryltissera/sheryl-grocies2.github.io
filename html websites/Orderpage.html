@@ -1,46 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="my website">
-    <title>Order Page</title>
-    <link rel="stylesheet" href="style/Website.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="my website">
+  <title>Home page</title>
+  <link rel="stylesheet" href="../style/Website.css">
 </head>
+
 <body>
-    <div id="order">
-        <header>
-            <nav class="navbar">
-                <div class="navdiv">
-                    <div class="logo">
-                        <a href="index.html">
-                            <img src="image/GROCIES LOGO.png" alt="logo" class="logo-img">
-                        </a>
-                    </div>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="Aboutuspage.html">About</a></li>
-                        <li class="dropdown">
-                            <a class="dropbtn">Products</a>
-                            <div class="dropdown-content">
-                                <a href="dairy.html">Dairy Products</a>
-                                <a href="vegetables.html">Vegetables</a>
-                                <a href="fruits.html">Fresh Fruits</a>
-                                <a href="Meat.html">Meat / Seafood</a>
-                                <a href="Ingredients.html">Ingredients</a>
-                            </div>
-                        </li>
-                        <li><a href="Orderpage.html">Order</a></li>
-                        <li><a href="Loyaltyregistration.html">Loyalty.R</a></li>
-                    </ul>
-                    <div class="nav-buttons">
-                        <a href="cart1.html" class="button-nav">Cart</a>
-                        <a href="fav.html" class="button-nav">Favorite</a>
-                    </div>
-                </div>
-            </nav>
-        </header>
-    </div>
+  <div id="homepage">
+    <header>
+      <nav class="navbar">
+          <div class="navdiv">
+              <div class="logo">
+                  <a href="index.html">
+                      <img src="../image/GROCIES LOGO.png" alt="logo" class="logo-img">
+                  </a>
+              </div>
+              <ul>
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="../html websites/Aboutuspage.html">About</a></li>
+                  <li class="dropdown">
+                      <a class="dropbtn">Products</a>
+                      <div class="dropdown-content">
+                          <a href="../html websites/dairy.html">Dairy Products</a>
+                          <a href="../html websites/vegetables.html">Vegetables</a>
+                          <a href="../html websites/fruits.html">Fresh Fruits</a>
+                          <a href="../html websites/Meat.html">Meat / Seafood</a>
+                          <a href="../html websites/Ingredients.html">Ingredients</a>
+                      </div>
+                  </li>
+                  <li><a href="../html websites/Orderpage.html">Order</a></li>
+                  <li><a href="../html websites/Loyaltyregistration.html">Loyalty.R</a></li>    
+              </ul>
+              <div class="nav-buttons">
+                <a href="../html websites/cart1.html" class="button-nav">Cart</a>
+                <a href="../html websites/fav.html" class="button-nav">Favorite</a>
+            </div>
+          </div>
+      </nav>
+  </header>
+</div>
     <br><br><br><br><br><br><br><br><br>
     <div id="billing-Container">
         <section id="ba" class="billing">
@@ -75,7 +77,6 @@
             </form>
         </section>
     </div>
-    <br><br>
     <h1 id="vh1">Cart Table</h1>
     <table id="order-table">
         <thead>
@@ -84,7 +85,6 @@
                 <th>Price</th>
                 <th>Quantity</th>
                 <th>Total Price</th>
-                <th>Remove</th>
             </tr>
         </thead>
         <tbody id="order-table-body">
@@ -92,11 +92,13 @@
         </tbody>
         <tfoot>
             <tr>
-                <td colspan="4">Total Price</td>
+                <td colspan="3">Total Price</td>
                 <td id="grand-total">Rs 0.00</td>
             </tr>
         </tfoot>
     </table>
+    <br><br>
+    <footer>
     <br><br>
     <footer>
         <div class="footer-container">
@@ -133,6 +135,6 @@
             </div>
         </div>
     </footer>
-    <script src="order.js"></script>
+    <script src="../scripts/order.js"></script>
 </body>
 </html>

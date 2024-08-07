@@ -1,24 +1,23 @@
-// Initialize cart
-let cart1 = [];
+let cart = [];
 
-// Function to add product to cart and save to localStorage
+// Function to append item to cart in localStorage
 function appendToCart(productName, price, imageSrc, quantity) {
     let cartItems = JSON.parse(localStorage.getItem("cart")) || [];
     cartItems.push({ productName, price, imageSrc, quantity });
     localStorage.setItem("cart", JSON.stringify(cartItems));
 }
 
-// Function to update the total price of a row
+// Function to update total price of a row
 function updateTotalPrice(row, price) {
-    const quantity = row.querySelector(".quantity-input").value;
+    const quantity = parseInt(row.querySelector(".quantity-input").value);
     const totalPriceCell = row.querySelector(".total-price");
-    const priceNumber = parseFloat(price.replace("Rs ", "").replace(" / KG", ""));
+    const priceNumber = parseFloat(price.replace("Rs ", ""));
     const totalPrice = priceNumber * quantity;
     totalPriceCell.innerText = `Rs ${totalPrice.toFixed(2)}`;
     updateGrandTotal();
 }
 
-// Function to update the grand total price
+// Function to update grand total price
 function updateGrandTotal() {
     let grandTotal = 0;
     document.querySelectorAll(".total-price").forEach((cell) => {
@@ -42,7 +41,7 @@ function removeFromCart(row) {
 function addToCart(productName, price, imageSrc, quantity = 1) {
     const tableBody = document.getElementById("cart-table-body");
     if (!tableBody) {
-        console.error("Cart table body not found!");
+        console.error("Cart table not found!");
         return;
     }
 
@@ -57,17 +56,14 @@ function addToCart(productName, price, imageSrc, quantity = 1) {
     `;
     tableBody.appendChild(row);
 
-    // Add event listener to quantity input
     row.querySelector(".quantity-input").addEventListener("input", function () {
         updateTotalPrice(row, price);
     });
 
-    // Add event listener to remove button
     row.querySelector(".remove-btn").addEventListener("click", function () {
         removeFromCart(row);
     });
 
-    // Set initial quantity and price
     updateTotalPrice(row, price);
 }
 
@@ -84,6 +80,7 @@ function loadFavoritesToCart() {
     const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
     favorites.forEach((product) => {
         addToCart(product.productName, product.price, product.imageSrc, product.quantity);
+        appendToCart(product.productName, product.price, product.imageSrc, product.quantity);
     });
 }
 
@@ -100,24 +97,20 @@ document.getElementById("apply-fav").addEventListener("click", function () {
 });
 
 // Attach event listener to the "Save order" button
-document.getElementById("save-order").addEventListener("click", function () {
-    saveOrderAsFavorite();
-});
+document.getElementById("save-order").addEventListener("click", saveOrderAsFavorite);
 
 // Load cart items from localStorage when the page loads
-document.addEventListener("DOMContentLoaded", function() {
-    loadCartFromLocalStorage();
-});
+document.addEventListener("DOMContentLoaded", loadCartFromLocalStorage);
 
 
 // Dairy Product Information
 const dairyProducts = {
-  "Ambewela Chocolate Milk": { price: 580, image: "image/Dairy/Ambewela Chocolate Milk.webp" },
-  "Ambewela Non Fat Milk": { price: 550, image: "image/Dairy/Ambewela Non Fat Milk.webp" },
-  "Kotmale Faluda Flav Milk": { price: 620, image: "image/Dairy/Kotmale Faluda Flav Milk.webp" },
-  "H.Cow Slices 200g": { price: 1780, image: "image/Dairy/Happy Cow Cheddar Slices 200g.webp" },
-  "Happy cow cheese": { price: 1790, image: "image/Dairy/Happy cow cheese.webp" },
-  "K. Cheese Spread 175g": { price: 880, image: "image/Dairy/Kotmale Cheese Spread 175g.webp" },
+  "Ambewela Chocolate Milk": { price: 580, image: "../image/Dairy/Ambewela Chocolate Milk.webp" },
+  "Ambewela Non Fat Milk": { price: 550, image: "../image/Dairy/Ambewela Non Fat Milk.webp" },
+  "Kotmale Faluda Flav Milk": { price: 620, image: "../image/Dairy/Kotmale Faluda Flav Milk.webp" },
+  "H.Cow Slices 200g": { price: 1780, image: "../image/Dairy/Happy Cow Cheddar Slices 200g.webp" },
+  "Happy cow cheese": { price: 1790, image: "../image/Dairy/Happy cow cheese.webp" },
+  "K. Cheese Spread 175g": { price: 880, image: "../image/Dairy/Kotmale Cheese Spread 175g.webp" },
 };
 
 document.getElementById("dairy_dropdown").addEventListener("change", function () {
@@ -147,12 +140,12 @@ document.querySelector(".cbox:nth-child(1) .cart-btn").addEventListener("click",
 
 // Vegetable Product Information
 const vegetableProducts = {
-  Celery: { price: 800, image: "image/Vegetables/Celery.webp" },
-  Cabbage: { price: 144, image: "image/Vegetables/Cabbage.webp" },
-  Pumpkin: { price: 60, image: "image/Vegetables/Pumpkin.webp" },
-  Tomatoes: { price: 480, image: "image/Vegetables/Tomatoes.webp" },
-  "Green Beans": { price: 304, image: "image/Vegetables/Green Beans (1).webp" },
-  Cauliflower: { price: 1100, image: "image/Vegetables/Cauliflower.webp" },
+  Celery: { price: 800, image: "../image/Vegetables/Celery.webp" },
+  Cabbage: { price: 144, image: "../image/Vegetables/Cabbage.webp" },
+  Pumpkin: { price: 60, image: "../image/Vegetables/Pumpkin.webp" },
+  Tomatoes: { price: 480, image: "../image/Vegetables/Tomatoes.webp" },
+  "Green Beans": { price: 304, image: "../image/Vegetables/Green Beans (1).webp" },
+  Cauliflower: { price: 1100, image: "../image/Vegetables/Cauliflower.webp" },
 };
 
 document.getElementById("vege_dropdown").addEventListener("change", function () {
@@ -182,12 +175,12 @@ document.querySelector(".cbox:nth-child(2) .cart-btn").addEventListener("click",
 
 // Fruit Product Information
 const fruitProducts = {
-  "Apple 1KG": { price: 850, image: "image/fruits/Apple 1KG.png" },
-  "Banana 1KG": { price: 305, image: "image/fruits/Banana 1KG.png" },
-  "Grapes 1 KG": { price: 2300, image: "image/fruits/Grapes 1KG.png" },
-  "Mango 1KG": { price: 545, image: "image/fruits/Mango 1KG.png" },
-  "Papaya 1KG": { price: 304, image: "image/fruits/Papaya 1KG.png" },
-  "Avocado 1KG": { price: 450, image: "image/fruits/Avocado 1KG.png" },
+  "Apple 1KG": { price: 850, image: "../image/fruits/Apple 1KG.png" },
+  "Banana 1KG": { price: 305, image: "../image/fruits/Banana 1KG.png" },
+  "Grapes 1 KG": { price: 2300, image: "../image/fruits/Grapes 1KG.png" },
+  "Mango 1KG": { price: 545, image: "../image/fruits/Mango 1KG.png" },
+  "Papaya 1KG": { price: 304, image: "../image/fruits/Papaya 1KG.png" },
+  "Avocado 1KG": { price: 450, image: "../image/fruits/Avocado 1KG.png" },
 };
 
 document.getElementById("fruit_dropdown").addEventListener("change", function () {
@@ -218,10 +211,10 @@ document.querySelector(".cbox:nth-child(3) .cart-btn").addEventListener("click",
 
 // Meat Product Information
 const meatProducts = {
-  "Whole Chicken 1KG": { price: 1380, image: "image/Meats/skinless chicken 1KG.png" },
-  "Sausages 1KG": { price: 1100, image: "image/Meats/Sausages 1KG.png" },
-  "Prawns 1 KG": { price: 1590, image: "image/Meats/Prawns 1KG.png" },
-  "Fresh Fish 1KG": { price: 875, image: "image/Meats/Fish 1KG.png" },
+  "Whole Chicken 1KG": { price: 1380, image: "../image/Meats/skinless chicken 1KG.png" },
+  "Sausages 1KG": { price: 1100, image: "../image/Meats/Sausages 1KG.png" },
+  "Prawns 1 KG": { price: 1590, image: "../image/Meats/Prawns 1KG.png" },
+  "Fresh Fish 1KG": { price: 875, image: "../image/Meats/Fish 1KG.png" },
 };
 
 document.getElementById("m_s_dropdown").addEventListener("change", function () {
@@ -236,7 +229,7 @@ document.getElementById("m_s_dropdown").addEventListener("change", function () {
   }
 });
 
-document.querySelector(".cbox:nth-child(3) .cart-btn").addEventListener("click", function () {
+document.querySelector(".cbox:nth-child(4) .cart-btn").addEventListener("click", function () {
   const selectedProduct = document.getElementById("m_s_dropdown").value;
   const productDetails = meatProducts[selectedProduct];
   if (productDetails) {
@@ -253,27 +246,27 @@ document.querySelector(".cbox:nth-child(3) .cart-btn").addEventListener("click",
 const ingProducts = {
   "Baking Powder": {
     price: 350,
-    image: "image/Baking/Baking Powder.png",
+    image: "../image/Baking/Baking Powder.png",
   },
   "Chilli Powder": {
     price: 260,
-    image: "image/Baking/Chilli Powder.png",
+    image: "../image/Baking/Chilli Powder.png",
   },
   "Corn Flour": {
     price: 135,
-    image: "image/Baking/Corn Flour.png",
+    image: "../image/Baking/Corn Flour.png",
   },
   "Crystal Salt": {
     price: 135,
-    image: "image/Baking/Crystal Salt.png",
+    image: "../image/Baking/Crystal Salt.png",
   },
   "Essence Vanilla": {
     price: 165,
-    image: "image/Baking/Essence Vanilla.png",
+    image: "../image/Baking/Essence Vanilla.png",
   },
   "Icing Sugar": {
     price: 240,
-    image: "image/Baking/Icing Sugar.png",
+    image: "../image/Baking/Icing Sugar.png",
   },
 };
 
@@ -289,7 +282,7 @@ document.getElementById("ing_dropdown").addEventListener("change", function () {
   }
 });
 
-document.querySelector(".cbox:nth-child(3) .cart-btn").addEventListener("click", function () {
+document.querySelector(".cbox:nth-child(5) .cart-btn").addEventListener("click", function () {
   const selectedProduct = document.getElementById("ing_dropdown").value;
   const productDetails = ingProducts[selectedProduct];
   if (productDetails) {
