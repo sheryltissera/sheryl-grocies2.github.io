@@ -1854,7 +1854,7 @@ border: 2px solid black;
 }
 /* Adjustments for the dairy boxes */
 .dairy-box {
-  max-width: 80%; /* Set maximum width to 80% of the container's width */
+  max-width: 70%; /* Set maximum width to 80% of the container's width */
   padding: 50px 30px; /* Increase padding to 30px */
 }
 .dairy-box img {
@@ -2890,6 +2890,31 @@ box-sizing: border-box;
 margin-top:5px ;
 }
 
+
+
+
+
+.quantity-input {
+  width: 30px; /* Adjust width as needed */
+  height:15px;
+  border: 1px solid #ccc; /* Border color */
+  font-size: 10px; /* Font size */
+  text-align: center; /* Center align the text */
+  outline: none; /* Remove default outline on focus */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Style for the username label */
 #cp label {
 font-weight: bold;
@@ -2976,8 +3001,8 @@ transform: scale(0.9);
 .remove-btn{
 font-family: poppins;
 display: inline-block;
-padding: 10px 20px;
-font-size: 11px;
+padding: 5px 15px;
+font-size: 10px;
 font-weight: bold;
 text-align: center;
 text-decoration: none;
@@ -3087,12 +3112,15 @@ background-color: #424242;
 .cart-container {
   grid-template-columns: repeat(1, 1fr); /* Single column layout */
   gap: 10px;
+  align-items: center;
 }
+
 
 .cbox {
   max-width: 90%; /* Adjust max-width */
   padding: 20px;
   margin: auto; /* Center alignment */
+  align-content: center;
 }
 
 .cbox button {
@@ -3144,6 +3172,32 @@ background-color: #424242;
 }
 
 }
+
+
+@media (max-width: 433px) {
+  #cartpage .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #cartpage .footer{
+    width: 500%;
+  }
+
+  #cartpage .footer-section {
+    min-width: 100%;
+    text-align: center;
+  }
+  #cartpage #sm {
+    flex-direction: column;
+  }
+  #cartpage #sm img {
+    margin: 10px 0;
+  }
+}
+
+
+
 
 .cbox label {
 display: block;

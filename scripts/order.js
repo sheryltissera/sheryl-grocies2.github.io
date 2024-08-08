@@ -43,12 +43,17 @@ document.getElementById("order-form").addEventListener("submit", function(event)
 
   const fname = document.getElementById("fname").value;
   const lname = document.getElementById("lname").value;
-
+  
+  // Get the current date
+  const currentDate = new Date();
+  const formattedDate = currentDate.toDateString(); // Format the date as desired
 
   const thanksText = `
 Thank you, ${fname} ${lname}!
 
-for selecting our supermarket for your recent order. We appreciate your trust in us and hope to serve you again soon!'
+for selecting our supermarket for your recent order. We appreciate your trust in us and hope to serve you again soon!
+
+Date of delivery: ${formattedDate}
   `;
 
   // Display the summary in an alert
