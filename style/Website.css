@@ -367,6 +367,26 @@ margin: 0 auto;
 }
 
 
+#dairyimg {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#vegimg {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#csimg {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
 
 .vege-hero {
 position: relative;
