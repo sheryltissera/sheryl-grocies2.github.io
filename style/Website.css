@@ -211,10 +211,11 @@ header {
 
 .navdiv li {
   margin: 2px 0;
-  padding: -20px;
+  padding: 20px; /* Changed to a positive value */
   margin-left: 8px; 
   display: block;
 }
+
 
 .navdiv li a {
   margin-left: auto;
@@ -279,10 +280,11 @@ header {
 
 .navdiv li {
   margin: 2px 0;
-  padding: -20px; 
-  margin-left: 0;
+  padding: 20px; /* Changed to a positive value */
+  margin-left: 0; 
   display: block; 
 }
+
 
 .navdiv li a {
   margin-left: auto;
@@ -585,12 +587,13 @@ background-image: url("../image/vege\ hero.jpg");
 }
 
 
-  .hero-content {
-    text-align: center; /* Align content to the right */
-    max-width: -800px;
-    margin: 0 auto; /* Center the content horizontally */
-    margin-right: 1%; /* Adjust as needed to move content more to the right */
-  }
+.hero-content {
+  text-align: center; /* Align content to the right */
+  max-width: 800px; /* Changed to a positive value */
+  margin: 0 auto; /* Center the content horizontally */
+  margin-left: 25%; /* Adjust as needed to move content more to the right */
+}
+
 
   .hero p {
     font-size: 28px;
