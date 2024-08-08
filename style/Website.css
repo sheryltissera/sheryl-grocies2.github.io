@@ -571,8 +571,9 @@ background-image: url("../image/vege\ hero.jpg");
   height: 300px;
   background-size: contain;
   background-position: center;
-  width: 100%;
+  width: 100%; /* Added a unit */
 }
+
 }
 /*Medium screen*/
 @media screen and (max-width:768px) {
