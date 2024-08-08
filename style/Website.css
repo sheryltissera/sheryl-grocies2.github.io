@@ -1985,7 +1985,7 @@ background-color: #424242;
 @media (max-width: 599px) {
 
 #vh2{
-  margin-top: -40px;
+  margin-top: -80px;
   text-align: center;
 }
 
@@ -2000,7 +2000,7 @@ background-color: #424242;
 .vbox {
   max-width: 80%; 
   padding: 50px 30px;
-  height: 450px;
+  height: 390px;
   margin-left: 45px;
 }
 .vbox img {
@@ -2032,6 +2032,21 @@ background-color: #424242;
   grid-template-columns: repeat(2, 1fr);
   gap: 15px;
 }
+
+
+.vbox {
+  max-width: 70%; 
+  padding: 40px 30px;
+  height: 390px;
+  margin-left: 45px;
+}
+
+.vbox img {
+  max-width: 90%; 
+  height: auto; 
+  margin-top: -50px; 
+}
+
 #cart-btn{
   background-color: rgba(255, 0, 0, 0);
   color: black;
@@ -2495,7 +2510,7 @@ background-color: #424242;
 .fbox {
   max-width: 80%; /* Set maximum width to 80% of the container's width */
   padding: 50px 30px; /* Increase padding to 30px */
-  height: 450px;
+  height: 390px;
   margin-left: 45px;
 }
 .fbox img {
@@ -2526,6 +2541,20 @@ background-color: #424242;
   grid-template-columns: repeat(2, 1fr);
   gap: 15px;
 }
+
+.fbox {
+  max-width: 80%; /* Set maximum width to 80% of the container's width */
+  padding: 40px 20px; /* Increase padding to 30px */
+  height: 390px;
+  margin-left: 40px;
+}
+
+.fbox img {
+  max-width: 80%; /* Set maximum width of images to 100% of their container */
+  height: auto; /* Maintain aspect ratio */
+  margin-top: -50px; /* Move the image down a little */
+}
+
 }
 
 /* Large screens */
@@ -2618,7 +2647,7 @@ background-color: #424242;
 .mbox {
   max-width: 80%; /* Set maximum width to 80% of the container's width */
   padding: 50px 30px; /* Increase padding to 30px */
-  height: 450px;
+  height: 380px;
   margin-left: 45px;
 }
 .mbox img {
@@ -2649,6 +2678,19 @@ background-color: #424242;
   grid-template-columns: repeat(2, 1fr);
   gap: 15px;
 }
+
+.mbox {
+  max-width: 80%; /* Set maximum width to 80% of the container's width */
+  padding: 50px 30px; /* Increase padding to 30px */
+  height: 390px;
+  margin-left: 45px;
+}
+.mbox img {
+  max-width: 100%; /* Set maximum width of images to 100% of their container */
+  height: auto; /* Maintain aspect ratio */
+  margin-top: -50px; /* Move the image down a little */
+}
+
 }
 
 /* Large screens */
@@ -2742,7 +2784,7 @@ background-color: #424242;
 .ibox {
   max-width: 80%; /* Set maximum width to 80% of the container's width */
   padding: 50px 30px; /* Increase padding to 30px */
-  height: 450px;
+  height: 390px;
   margin-left: 45px;
 }
 .ibox img {
@@ -2839,22 +2881,33 @@ background-color: #424242;
 
 
 /* Medium screens */
-@media (min-width: 861px) and (max-width: 1023px) {
-.ing-container {
-  grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
-}
-#cart-btn {
-  background-color: rgba(255, 0, 0, 0);
-  color: black;
-  border: 2px solid black;
-  width: 45%; 
-  height: 60px;
-  font-size: 15px;
-  text-align: center;
-  margin-top: 10px;
-}
-}
+@media (min-width: 600px) and (max-width: 830px) {
+  .ing-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  
+  .ibox {
+    max-width: 80%; /* Set maximum width to 80% of the container's width */
+    padding: 50px 30px; /* Increase padding to 30px */
+    height: 390px;
+    margin-left: 45px;
+  }
+  .ibox img {
+    max-width: 100%; /* Set maximum width of images to 100% of their container */
+    height: auto; /* Maintain aspect ratio */
+    margin-top: -50px; /* Move the image down a little */
+  }
+  
+  }
+  
+  /* Large screens */
+  @media (min-width: 1024px) {
+  .meat-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  }
 
 /* Large screens */
 @media (min-width: 1024px) {
