@@ -140,7 +140,7 @@ header {
 
 .navdiv li {
   margin: 2px 0;
-  padding: 20px; /* Changed to a positive value */
+  padding-left: 30px; /* Changed to a positive value */
   margin-left: 8px; 
   display: block;
 }
@@ -280,7 +280,7 @@ header {
 
 .navdiv li {
   margin: 2px 0;
-  padding: 20px; /* Changed to a positive value */
+  padding: -20px; 
   margin-left: 0; 
   display: block; 
 }

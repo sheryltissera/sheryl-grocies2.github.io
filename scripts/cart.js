@@ -1,15 +1,14 @@
 
-// Initialize cart
 let cart1 = [];
 
-// Function to add product to cart and save to localStorage
+//add product to cart and save to localStorage
 function appendToCart(productName, price, imageSrc, quantity) {
     let cartItems = JSON.parse(localStorage.getItem("cart")) || [];
     cartItems.push({ productName, price, imageSrc, quantity });
     localStorage.setItem("cart", JSON.stringify(cartItems));
 }
 
-// Function to update the total price of a row
+//update the total price of a row
 function updateTotalPrice(row, price) {
     const quantity = row.querySelector(".quantity-input").value;
     const totalPriceCell = row.querySelector(".total-price");
@@ -19,7 +18,7 @@ function updateTotalPrice(row, price) {
     updateGrandTotal();
 }
 
-// Function to update the grand total price
+//grand total price
 function updateGrandTotal() {
     let grandTotal = 0;
     document.querySelectorAll(".total-price").forEach((cell) => {
@@ -28,7 +27,7 @@ function updateGrandTotal() {
     document.getElementById("grand-total").innerText = `Rs ${grandTotal.toFixed(2)}`;
 }
 
-// Function to remove a row from the cart table and update localStorage
+//remove row from cart table and update localStorage
 function removeFromCart(row) {
     const productName = row.querySelector("td").innerText;
     let cartItems = JSON.parse(localStorage.getItem("cart")) || [];
@@ -39,13 +38,9 @@ function removeFromCart(row) {
     updateGrandTotal();
 }
 
-// Function to add product to the cart table
+//add product to the cart table
 function addToCart(productName, price, imageSrc, quantity = 1) {
     const tableBody = document.getElementById("cart-table-body");
-    if (!tableBody) {
-        console.error("Cart table body not found!");
-        return;
-    }
 
     const row = document.createElement("tr");
     row.innerHTML = `
@@ -57,30 +52,29 @@ function addToCart(productName, price, imageSrc, quantity = 1) {
             <button class="save-btn">Save</button>
         </td>
         <td class="total-price">${price}</td>
-        <td><button class="remove-btn">Remove</button></td>
+        <td><button class="remove-btn">Del</button></td>
     `;
     tableBody.appendChild(row);
 
-    // Add event listener to quantity input
+    // quantity input
     row.querySelector(".quantity-input").addEventListener("input", function () {
         updateTotalPrice(row, price);
     });
 
-    // Add event listener to save button
+    //save button
     row.querySelector(".save-btn").addEventListener("click", function () {
         saveQuantity(row, productName);
     });
 
-    // Add event listener to remove button
+    //remove button
     row.querySelector(".remove-btn").addEventListener("click", function () {
         removeFromCart(row);
     });
 
-    // Set initial quantity and price
     updateTotalPrice(row, price);
 }
 
-// Function to save the quantity to localStorage
+//save the quantity to localStorage
 function saveQuantity(row, productName) {
     const quantity = row.querySelector(".quantity-input").value;
     let cartItems = JSON.parse(localStorage.getItem("cart")) || [];
@@ -97,7 +91,7 @@ function saveQuantity(row, productName) {
     
 }
 
-// Function to load cart items from localStorage
+//load cart items from localStorage
 function loadCartFromLocalStorage() {
     const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
     cartItems.forEach(item => {
@@ -105,7 +99,7 @@ function loadCartFromLocalStorage() {
     });
 }
 
-// Function to load favorites into the cart
+//load favorites into the cart
 function loadFavoritesToCart() {
     const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
     favorites.forEach((product) => {
@@ -113,14 +107,14 @@ function loadFavoritesToCart() {
     });
 }
 
-// Function to save the current cart as favorites
+//save the current cart as favorites
 function saveOrderAsFavorite() {
     const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
     localStorage.setItem("favorites", JSON.stringify(cartItems));
     alert("Order saved as favorite!");
 }
 
-// Attach event listener to the "Apply Fav" button
+//"Apply Fav" button
 document.getElementById("apply-fav").addEventListener("click", function () {
   // Clear current cart
   const tableBody = document.getElementById("cart-table-body");
@@ -128,10 +122,9 @@ document.getElementById("apply-fav").addEventListener("click", function () {
       tableBody.innerHTML = ''; // Clear existing cart items
   }
 
-  // Load favorites
   const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
   
-  // Clear existing cart items from localStorage
+  // Clear current cart items from localStorage
   localStorage.setItem("cart", JSON.stringify([]));
   
   // Add favorites to the cart
@@ -140,13 +133,12 @@ document.getElementById("apply-fav").addEventListener("click", function () {
       addToCart(item.productName, item.price, item.imageSrc, item.quantity);
   });
   
-  // Check cart and display banner
-  checkCartAndDisplayBanner();
+
 });
 
 
 
-// Attach event listener to the "Save order" button
+// "Save order" button
 document.getElementById("save-order").addEventListener("click", function () {
     saveOrderAsFavorite();
     
