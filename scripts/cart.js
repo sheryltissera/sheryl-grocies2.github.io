@@ -184,12 +184,12 @@ document.querySelector(".cbox:nth-child(1) .cart-btn").addEventListener("click",
 
 // Vegetable Product Information
 const vegetableProducts = {
-  Celery: { price: 800, image: "../image/Vegetables/Celery.webp" },
-  Cabbage: { price: 144, image: "../image/Vegetables/Cabbage.webp" },
-  Pumpkin: { price: 60, image: "../image/Vegetables/Pumpkin.webp" },
-  Tomatoes: { price: 480, image: "../image/Vegetables/Tomatoes.webp" },
-  "Green Beans": { price: 304, image: "../image/Vegetables/Green Beans (1).webp" },
-  Cauliflower: { price: 1100, image: "../image/Vegetables/Cauliflower.webp" },
+  "Celery 1KG": { price: 800, image: "../image/Vegetables/Celery.webp" },
+  "Cabbage 1KG": { price: 144, image: "../image/Vegetables/Cabbage.webp" },
+  "Pumpkin 1KG": { price: 60, image: "../image/Vegetables/Pumpkin.webp" },
+  "Tomatoes 1KG": { price: 480, image: "../image/Vegetables/Tomatoes.webp" },
+  "Green Beans 1KG": { price: 304, image: "../image/Vegetables/Green Beans (1).webp" },
+  "Cauliflower 1KG": { price: 1100, image: "../image/Vegetables/Cauliflower.webp" },
 };
 
 document.getElementById("vege_dropdown").addEventListener("change", function () {
@@ -224,7 +224,7 @@ const fruitProducts = {
   "Grapes 1 KG": { price: 2300, image: "../image/fruits/Grapes 1KG.png" },
   "Mango 1KG": { price: 545, image: "../image/fruits/Mango 1KG.png" },
   "Papaya 1KG": { price: 304, image: "../image/fruits/Papaya 1KG.png" },
-  "Avocado 1KG": { price: 450, image: "../image/fruits/Avocado 1KG.png" },
+  "Avocado 1KG": { price: 450, image: "../image/fruits/Avacado 1KG.png" },
 };
 
 document.getElementById("fruit_dropdown").addEventListener("change", function () {
@@ -258,7 +258,7 @@ const meatProducts = {
   "Whole Chicken 1KG": { price: 1380, image: "../image/Meats/skinless chicken 1KG.png" },
   "Sausages 1KG": { price: 1100, image: "../image/Meats/Sausages 1KG.png" },
   "Prawns 1 KG": { price: 1590, image: "../image/Meats/Prawns 1KG.png" },
-  "Fresh Fish 1KG": { price: 875, image: "../image/Meats/Fish 1KG.png" },
+  "Fish 1KG": { price: 875, image: "../image/Meats/Fish 1KG.png" },
 };
 
 document.getElementById("m_s_dropdown").addEventListener("change", function () {
